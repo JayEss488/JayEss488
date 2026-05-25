@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>James Stephens | Personal Portfolio</title>
+    <meta name="description" content="Personal website showcasing projects, writing by James.">
+    <link rel="stylesheet" href="style.css">
+    <!-- Google Fonts for Modern Typography -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <!-- Animated background elements -->
+    <div class="background-effects">
+        <div class="blob blob-1"></div>
+        <div class="blob blob-2"></div>
+    </div>
+
+    <!-- Navigation -->
+    <nav class="navbar">
+        <div class="nav-content">
+            <div class="logo">JS</div>
+            <ul class="nav-links">
+                <li><a href="#about">About</a></li>
+                <li><a href="#projects">Projects</a></li>
+                <li><a href="#writing">Writing</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <main class="container">
+        <!-- Hero Section -->
+        <header class="hero" id="about">
+            <h1 class="hero-title">Hello, I'm <span class="highlight">James</span></h1>
+            <p class="hero-subtitle">This is where I'll put some of my writing, coding and other projects.</p>
+            <div class="hero-cta">
+                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#contact" class="btn btn-secondary">Get in Touch</a>
+            </div>
+        </header>
+
+        <!-- Projects Section -->
+        <section id="projects" class="section">
+            <h2 class="section-title">Digital Projects (Larger to Smaller)</h2>
+            <div class="grid">
+                <article class="card">
+                    <div class="card-image" style="background-image: url('poster_duo.png');"></div>
+                    <div class="card-content">
+                        <h3>THIS MEANS WAR: Visual Novel</h3>
+                        <p>Extracurriculars have never been so lethal.</p>
+                        <a href="https://jay-650.itch.io/this-means-war" class="link-btn" download>Go to itch.io
+                            &rarr;</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <!-- Used an inline style to apply the image directly -->
+                    <div class="card-image" style="background-image: url('cover_preres_alt.png');"></div>
+                    <div class="card-content">
+                        <h3>Preres.: Youngest Children</h3>
+                        <p>My first finished story.</p>
+                        <a href="Preres the Youngest Children_v4.epub" class="link-btn" download>Download Story (EPUB)
+                            &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image" style="background-image: url('cover_an.png');"></div>
+                    <div class="card-content">
+                        <h3>L'Annee (Short Film)</h3>
+                        <p>A 30 minute comedy about my year abroad.</p>
+                        <a href="https://youtu.be/da2OR0sHz_8?si=iQDoXKQQIc5Oow2_" class="link-btn">View on Youtube
+                            &rarr;</a>
+                    </div>
+
+                </article>
+                <article class="card">
+                    <div class="card-image" style="background-image: url('byob.png');"></div>
+                    <div class="card-content">
+                        <h3>Build Your Own Battleship</h3>
+                        <p>My 2022 A-Level Computer Science project.</p>
+                        <a href="BYOB_2022.zip" class="link-btn" download>Download Game (zip)
+                            &rarr;</a>
+                    </div>
+                </article>
+                <article class="card">
+                    <div class="card-image" style="background-image: url('pom_cover.jpg');"></div>
+                    <div class="card-content">
+                        <h3>Physics of Missiles</h3>
+                        <p>A website for a Year 2 team project.</p>
+                        <a href="Physics of Missiles/index.html" class="link-btn">Link to Site
+                            &rarr;</a>
+                    </div>
+                </article>
+
+                <article class="card">
+                    <div class="card-image" style="background-image: url('twine/swords.png')"></div>
+                    <div class="card-content">
+                        <h3>Mini Twine Games</h3>
+                        <p>A few games I made in a weekend.</p>
+                        <a href="twine/The Abandoned Submarine v5.html" class="link-btn">Abandoned Sub
+                            &rarr;</a>
+                        <a href="twine/investo.html" class="link-btn">Investo
+                            &rarr;</a>
+                    </div>
+                </article>
+
+
+            </div>
+        </section>
+
+        <!-- Writing / Files Section -->
+        <section id="writing" class="section">
+            <h2 class="section-title">Writing & Files</h2>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">A space for a few of the many drafts I have.</p>
+            <div class="grid">
+                <div class="file-card">
+                    <div class="file-icon">📄</div>
+                    <div class="file-info">
+                        <h3>Old Preres</h3>
+                        <p>docx</p>
+                    </div>
+                    <!-- The 'download' attribute prompts file downloading -->
+                    <a href="Preres ancienne- Josh&Eliz.docx" class="btn btn-sm btn-primary" download>Download</a>
+                </div>
+
+                <div class="file-card">
+                    <div class="file-icon">📝</div>
+                    <div class="file-info">
+                        <h3>Club de L'Occulte Draft</h3>
+                        <p>docx</p>
+                    </div>
+                    <a href="cdo.docx" class="btn btn-sm btn-primary" download>Download</a>
+                </div>
+
+                <div class="file-card">
+                    <div class="file-icon">📝</div>
+                    <div class="file-info">
+                        <h3>Le Traitre- short story</h3>
+                        <p>docx</p>
+                    </div>
+                    <a href="Yuiri.docx" class="btn btn-sm btn-primary" download>Download</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact" class="footer">
+        <div class="container">
+            <h2>Let's Connect</h2>
+            <p>I can be reached at jstephens650@gmail.com</p>
+        </div>
+    </footer>
+</body>
+
+</html>

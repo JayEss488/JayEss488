@@ -1,0 +1,213 @@
+<!--template courtesy of:
+https://dev.to/sulaimonolaniran/building-a-simple-quiz-with-html-css-and-javascript-4elp
+
+but like you know I edited it a bit
+-->
+<head>
+    <link href="assets/img/favicon.png" rel="icon">
+    <title>Quiz</title>
+    <link href="quiz_style.css" rel="stylesheet">
+</head>
+
+
+
+
+<body onload="NextQuestion(0)">
+    <main>
+        <!-- creating a modal for when quiz ends -->
+        <div class="modal-container" id="score-modal">
+
+            <div class="modal-content-container">
+
+                <h1>Quiz Completed</h1>
+
+                <div class="grade-details">
+                    <p>Attempts : <span id="numQs"></span></p>
+                    <p>Right : <span id="right-answers"></span></p>
+                    <p>Wrong : <span id="wrong-answers"></span></p>
+                    <p>Percentage : <span id="grade-percentage"></span>%</p>
+                    <p ><span id="remarks"></span></p>
+                </div>
+
+                <div class="modal-button-container">
+                    <button onclick="closeScoreModal()">Continue</button>
+                </div>
+
+            </div>
+        </div>
+<!-- end of modal of quiz details-->
+
+        <div class="game-quiz-container">
+
+            <div class="game-details-container">
+                <h1>Score : <span id="player-score"></span> / <span id="ten"></span></h1>
+                <h1> Question : <span id="question-number"></span> / <span id="ten2"></span></h1>
+            </div>
+
+            <div class="game-question-container">
+                <h1 id="display-question"></h1><!--Where q text goes-->
+            </div>
+
+            <div class="game-options-container">
+
+               <div class="modal-container" id="option-modal">
+
+                    <div class="modal-content-container">
+                         <h1>Please Pick An Option</h1>
+
+                         <div class="modal-button-container">
+                            <button onclick="closeOptionModal()">Continue</button>
+                        </div>
+
+                    </div>
+
+               </div>
+
+                <span>
+                    <input type="radio" id="option-one" name="option" class="radio" value="optionA" />
+                    <label for="option-one" class="option" id="option-one-label"></label>
+                </span>
+
+
+                <span>
+                    <input type="radio" id="option-two" name="option" class="radio" value="optionB" />
+                    <label for="option-two" class="option" id="option-two-label"></label>
+                </span>
+
+
+                <span>
+                    <input type="radio" id="option-three" name="option" class="radio" value="optionC" />
+                    <label for="option-three" class="option" id="option-three-label"></label>
+                </span>
+
+
+                <span>
+                    <input type="radio" id="option-four" name="option" class="radio" value="optionD" />
+                    <label for="option-four" class="option" id="option-four-label"></label>
+                </span>
+
+
+            </div>
+
+            <div class="next-button-container">
+                <button onclick="handleNextQuestion()">Next Question</button>
+            </div>
+
+        </div>
+    </main>
+</body>
+
+ 
+
+
+
+
+
+<script>
+const questions = [
+    {
+        question: "Which stage of a missile's flight lasts the longest?",
+        optionA: "Boost phase",
+        optionB: "Midcourse phase",
+        optionC: "Re-entry phase",
+        optionD: "Impact phase",
+        correctOption: "optionB",
+        ep:"Explanation: The missile's flight has 3 stages: boost phase, midcourse phase and re-entry phase. The boost phase and re-entry phase only last for a few minutes, whereas the midcourse phase is where the missile covers the vast majority of its distance and therefore takes the most time."
+    },
+
+    {
+        question: "From what does the word 'Ballistic' come from?",
+        optionA: "The Russian word 'to propel'",
+        optionB: "The German word for throwing a ball",
+        optionC: "The latin word for 'to balance'",
+        optionD: "The Greek word 'to throw'",
+        correctOption: "optionD",
+        ep:"Explanation: The word ballistic ultimately comes from the greek word 'ballein', which means 'to throw'."
+    },
+
+    {
+        question: "What causes a missile to heat up in the re-entry phase?",
+        optionA: "Increased air resistance",
+        optionB: "Burning of excess fuel",
+        optionC: "Vibrations in the fins",
+        optionD: "Conversion of mass to energy",
+        correctOption: "optionA",
+        ep:"Explanation: As the missile starts to converge on its target it loses altitude quickly. Because it is now going through denser air and is moving so quickly, the missile heats up from the friction between the air molecules and the missile."
+    },
+
+    {
+        question: "Which burnout angle gives the greatest range?",
+        optionA: "22.5°",
+        optionB: "45°",
+        optionC: "60°",
+        optionD: "62.5°",
+        correctOption: "optionB",
+        ep:"Explanation: The equation for range has a sin(2x) term in it. Between 0° and 90°, this is a maximum at 45°, which is why range is a maximum at 45°."
+    },
+
+    {
+        question: "A missile is fired at a burnout angle of 35° and lands 500m away. Assuming a flat earth, with the only force acting on the missile being gravity, what other angle at the same burnout velocity would give this same range of 500m?",
+        optionA: "70°",
+        optionB: "65°",
+        optionC: "45°",
+        optionD: "55°",
+        correctOption: "optionD",
+        ep:"Explanation: Complementary angles (angles that add up to 90°), have the same range. In this case we have 90 - 35 = 55."
+    },
+
+    {
+        question: "What effect does the curvature of the earth have on the maximum range burnout angle?",
+        optionA: "No effect",
+        optionB: "Decreases maximum range burnout angle",
+        optionC: "Increases maximum range burnout angle",
+        optionD: "It depends on which hemisphere the missile is launched in",
+        correctOption: "optionB",
+        ep:"Explanation: The curvature of the earth means that the distance between the missile and the ground is greater than it would be if it was flat, since the earth 'bends away' from the trajectory of the missile. This means a greater range can be achieved by angling the missile lower to the ground."
+    },
+
+    {
+        question: "Which of these is the range of a missile proportional to?",
+        optionA: "V₀",
+        optionB: "The square root of V₀",
+        optionC: "V₀²",
+        optionD: "V₀³",
+        correctOption: "optionC",
+        ep:"Explanation: The equation for range has a V₀² term in it, which means that range is proportional to V₀²."
+    },
+
+    {
+        question: "If we assume the only force acting on a missile is gravity, what is the final x component velocity of the missile when it lands?",
+        optionA: "V₀",
+        optionB: "V₀cos(θ)",
+        optionC: "V₀/2",
+        optionD: "V₀sin(θ)",
+        correctOption: "optionB",
+        ep:"Explanation: Since no there is no force acting on the missile along the x direction there is no acceleration along the x direction meaning the x component of missile's velocity does not change and remains at V₀cosθ."
+    },
+
+    {
+        question: "Assuming the only force acting on a missile is gravity, what y component acceleration does the missile experience?",
+        optionA: "g",
+        optionB: "-g",
+        optionC: "g sin(θ)",
+        optionD: "g cos(θ)",
+        correctOption: "optionB",
+        ep:"The only force acting on the missile is gravity, and so it experiences the acceleration due to gravity, 'g'. Since gravity is acting downwards we need to change the sign to account for this, so the acceleration is -g."
+    },
+
+
+    {
+        question: "At which of these angles does sin(2θ)  have a maximum?",
+        optionA: "45°",
+        optionB: "60°",
+        optionC: "75°",
+        optionD: "90°",
+        correctOption: "optionA",
+        ep:"Explanation: Remember that sin(2θ) is just a sin(θ) graph squashed along the x-axis by a factor of 2. Therefore the peak that a sin(θ) has at 90° is now at 45°."
+    }
+    ]
+</script>
+
+<script src="quiz_script.js"></script>
+
+

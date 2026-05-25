@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Long Range Guidance</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS Files -->
+  <link href="assets/css/variables.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+
+  <!-- =======================================================
+  * Template Name: ZenBlog
+  * Updated: Sep 18 2023 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/zenblog-bootstrap-blog-template/
+  * Author: BootstrapMade.com
+  * License: https:///bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+  <!-- ======= Header ======= -->
+  <header id="header" class="header d-flex align-items-center fixed-top">
+    <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+      <a href="index.html" class="logo d-flex align-items-center">
+        <!-- Uncomment the line below if you also wish to use an image logo -->
+        <img class="logo-img" src="assets/img/logo.png" alt="">
+      </a>
+
+      <nav id="navbar" class="navbar">
+        <ul>
+          <li><a href="index.html#physics">Physics</a></li>
+          <img src="assets/img/missile_art1.png">
+          <li><a href="index.html#engineering">Engineering</a></li>
+          <img src="assets/img/missile_art4.jpg">
+          <li><a href="index.html#missiles">Quizzes</a></li>
+          <img src="assets/img/missile_art2.jpg">
+        </ul>
+      </nav><!-- .navbar -->
+
+
+    </div>
+
+  </header><!-- End Header -->
+
+
+
+  <main id="main">
+
+    <section class="single-post-content">
+      <div class="container">
+        <div class="row">
+          <div class="post-content" data-aos="fade-up">
+
+            <!-- ======= the article itself ======= -->
+              <div class="single-post">
+                  <div class="post-meta"><span class="date">Engineering</span> <span class="mx-1">&bullet;</span> <span>4 mins</span></div>
+                  <h1 class="mb-5">Long Range Guidance</h1>
+                  <br />
+                  <p><span class="firstcharacter">C</span>ertain missiles can reliably hit specific buildings from a continent away. But just how can they achieve near-perfect accuracies travelling at thousands of meters per second in a turbulent atmosphere? </p>
+                  <br />
+                  <figure class="my-4">
+                      <img src="assets/img/silo.webp" alt="" class="img-fluid">
+<figcaption>[<a style="color:Blue;" href=#ref1>1</a>]</figcaption>
+                  </figure>
+                  <br />
+                  <p style="font-size:large;">Before I explain the methods, it's useful to know some terminology:</p>
+                  <p><strong>CEP/circular error probability -</strong> 50% of missiles land within this range of the target. In the image, this is the inner circle. Most of the rest land within double this distance.<p>
+                      <figure class="my-4">
+                          <img src="assets/img/cep.png" alt="" class="img-fluid smaller-img"> 
+<figcaption>[<a style="color:Blue;" href=#ref1>2</a>]</figcaption>
+                      </figure>
+                  <p><strong>Ballistic missile - </strong>any missile that follows a parabolic trajectory. They are only powered for the first stage, then the engine cuts off and they drift to their target.</p>
+                  <p><strong>Cruise missiles -</strong> missiles with aircraft engines and short wings. They are continually powered. Most are subsonic, so travel as fast as planes, and often fly low to the ground to avoid detection, but the very fastest travel 10 times that [<a style="color:Blue;" href=#ref1>3</a>].</p>
+                  <br />
+                  <figure class="my-4">
+                      <img src="assets/img/traj.png" alt="" class="img-fluid smaller-img">
+                      <figcaption>[<a style="color:Blue;" href=#ref1>4</a>] The arrow points in the direction of motion at an instant.</figcaption>
+                  </figure>
+                  <br />
+
+                  <h5>Key methods:</h5>
+                  <br />
+                  <p>First of all, <strong>preset guidance</strong>, a form of inertial guidance. If you need a simple method that’s fully self-contained within the missile, this is the go-to. You set the target, and the missile calculates the trajectory it needs to reach it. Then, using accelerometers to track speed and gyroscopes to track direction, the missile keeps track of where it is and where it's heading. </p>
+                  <p>This method depends entirely on the precision of its instruments, so early examples had low accuracies. But modern accelerometers can measure to millionths of a g, and gyroscopes millionths of a degree per second of turn. Furthermore, you can use several in combination for even better accuracy. This method is used by Minuteman ICBMs [<a style="color:Blue;" href=#ref1>5</a>], a $7bn cold-war missile that still has variants in service [<a style="color:Blue;" href=#ref1>6</a>].</p>
+                  <figure class="my-4">
+                      <img src="assets/img/gyro.png" alt="" class="img-fluid smaller-img">
+                      <figcaption>[<a style="color:Blue;" href=#ref1>7</a>] This high-precision gyroscope weighs 60g.</figcaption>
+                  </figure>
+                  <p>Next, the well-known system of <strong>GPS:</strong> three satellites send a signal, explaining where they are and what precise time the signal was sent. The missile uses this to work out where it is. Technically, GPS is just the American system: the ESA has Galileo, the Russians have GLONASS and the Chinese and Japanese each have their own systems. Ground stations can also be used to do this.</p>
+                  <p><strong>Celestial navigation </strong> [<a style="color:Blue;" href=#ref1>8</a>] is one I found particularly clever. A camera is placed on the missile and set to look for a star, or several, recording the angles above the horizon. Then, using precalculated knowledge of where stars will be, the missile narrows down its location. The idea is to correct inaccuracies in inertial guidance. Even the best gyroscopes gradually build up inaccuracies, and a millionth of a degree of error for ten minutes, exacerbated by 1000km of travel, builds up. This new information is used to correct this, putting the missile back on track. This is used on Trident missiles [<a style="color:Blue;" href=#ref1>9</a>].</p>
+                  <p><strong>Scene matching</strong>, for example TERCOM (terrain contour matching) is a type used by cruise missiles. Information about the terrain it will fly over is loaded into the missile, then sensors compare what it sees on the ground below to what’s in its database. A famous example is the Tomahawk.</p>
+                  <p>In conclusion, most missiles use a form of inertial guidance as a basis for their navigation. However, missiles can use several methods from stars to satellites to refine their accuracy and achieve incredible precision.</p>
+                  <p>Final note: These guidance methods mostly apply to ballistic missiles aimed at static targets. Several extra methods, such as radar homing or heat-seeking become relevant for other applications, like targeting aircraft.</p>
+                  <br />
+                  <figure class="my-4">
+                      <img src="assets/img/trident1.jpg" alt="" class="img-fluid">
+                      <figcaption>[<a style="color:Blue;" href=#ref1>10</a>] A Trident missile.</figcaption>
+                  </figure>
+
+                  <br />
+                  <h3 class=>Quiz</h3>
+                  <br />
+                  <br />
+                  <p>Test your knowledge with this article's quiz.</p>
+                  <div class="fun-fact fun-margin">
+                      <a href="guidance_quiz.html">Take the quiz here!</a>
+                  </div>
+
+                  <p class="next">See next: <a href="v1v2.html" class="anext">V-Weapons</a></p>
+                  <br />
+                  <h5>References</h5>
+                  <p id="ref1" class="references">
+[1] Business insider <a style="color:Blue;" href="https://www.businessinsider.com/us-nuclear-missile-silos-where-you-can-sit-at-controls-2020-1?r=US&IR=T">"missile image"</a><br>
+[2] Wikipedia <a style="color:Blue;" href="https://en.wikipedia.org/wiki/Circular_error_probable#/media/File:Circular_error_probable_-_example.png">"circular probability image"</a> author: Ariel196<br>
+[3] TASS news, find <a style="color:Blue;" href="https://tass.com/defense/941559">here</a><br>
+[4] toppr, <a style="color:Blue;" href="https://www.toppr.com/guides/physics-formulas/trajectory-formula/">"trajectory formula"</a><br>
+[5] National air and space museum, <a style="color:Blue;" href="https://airandspace.si.edu/collection-objects/guidance-system-minuteman-iii/nasm_A19770995000">"minuteman guidance system"</a><br>
+[6] Missile Defense Project, Missile Threat, Center for Strategic and International Studies <a style="color:Blue;" href="https://missilethreat.csis.org/missile/minuteman-iii/">“Minuteman III”</a> September 19, 2016<br> 
+
+[7] Althen, <a style="color:Blue;" href="https://www.althensensors.com/sensors/gyroscope-sensors/high-precision-gyroscopes/">"high precision gyroscope image"</a><br>
+
+[8] The Oxford Essential Dictionary of the U.S. Military<a style="color:Blue;" href="https://www.oxfordreference.com/display/10.1093/oi/authority.20110803100530877">“stellar guidance”</a><br>
+
+[9] Wikipedia contributors. Trident (missile). In Wikipedia, The Free Encyclopedia.(2024, January 18), from <a style="color:Blue;" href="https://en.wikipedia.org/wiki/Trident_(missile)">here</a> Retrieved 16:37 February 15, 2024<br> 
+
+[10] USNI news, <a style="color:Blue;" href="https://news.usni.org/2021/01/15/wolfe-modernized-trident-missiles-require-rigorous-testing-as-navy-builds-columbia-class">"trident missile image"</a> from US Navy
+
+
+                  </p>
+              </div><!-- End Single Post Content -->
+
+            
+
+          </div>
+          
+
+          
+        </div>
+      </div>
+    </section>
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+    <div class="footer-content">
+      <div class="container">
+          <div class="col-6 col-lg-2">
+            <h3 class="footer-heading">More Articles</h3>
+            <ul class="footer-links list-unstyled">
+              <li><a href="Trajectories of missiles.html"><i class="bi bi-chevron-right"></i> Ballistics Interactive</a></li>
+              <li><a href="v1v2.html"><i class="bi bi-chevron-right"></i> V-Weapons</a></li>
+              <li><a href="laws_of_motion.html"><i class="bi bi-chevron-right"></i> Laws of Motion</a></li>
+              
+            </ul>
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-legal">
+
+            <div class="copyright centered">
+              <strong><span>The Amazing Physics of Missiles </span></strong><a href="single-post.html"><img src="assets/img/favicon.png" alt=""></a>
+            </div>
+            <div class="credits centered">
+              A Physics in Society Project
+            </div>
+            <div class="credits centered" a>
+              Template by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+    </div>
+
+  </footer>
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+</body>
+
+</html>

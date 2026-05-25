@@ -1,0 +1,154 @@
+
+<!-- saved from url=(0177)file:///Users/hugomellor/Library/CloudStorage/GoogleDrive-Hugo.mellor@icloud.com/.shortcut-targets-by-id/1M_1eXb9Wfq75h5B8CbsU5tKf5XCf5abN/Physics%20of%20Missiles/aero_quiz.html -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <link href="file:///Users/hugomellor/Library/CloudStorage/GoogleDrive-Hugo.mellor@icloud.com/.shortcut-targets-by-id/1M_1eXb9Wfq75h5B8CbsU5tKf5XCf5abN/Physics%20of%20Missiles/assets/img/favicon.png" rel="icon">
+    <title>Quiz</title>
+    <link href="./V1V2QUIZ_files/quiz_style.css" rel="stylesheet">
+</head>
+
+
+
+
+<body onload="NextQuestion(0)">
+    <main>
+        <!-- creating a modal for when quiz ends -->
+        <div class="modal-container" id="score-modal">
+
+            <div class="modal-content-container">
+
+                <h1>Quiz Completed</h1>
+
+                <div class="grade-details">
+                    <p>Attempts : <span id="numQs"></span></p>
+                    <p>Right : <span id="right-answers"></span></p>
+                    <p>Wrong : <span id="wrong-answers"></span></p>
+                    <p>Percentage : <span id="grade-percentage"></span>%</p>
+                    <p><span id="remarks"></span></p>
+                </div>
+
+                <div class="modal-button-container">
+                    <button onclick="closeScoreModal()">Continue</button>
+                </div>
+
+            </div>
+        </div>
+<!-- end of modal of quiz details-->
+
+        <div class="game-quiz-container">
+
+            <div class="game-details-container">
+                <h1>Score : <span id="player-score">1</span> / <span id="ten">4</span></h1>
+                <h1> Question : <span id="question-number">3</span> / <span id="ten2">4</span></h1>
+            </div>
+
+            <div class="game-question-container">
+                <h1 id="display-question">What is a critical issue found at speeds exceeding Mach 5?</h1><!--Where q text goes-->
+            </div>
+
+            <div class="game-options-container">
+
+               <div class="modal-container" id="option-modal">
+
+                    <div class="modal-content-container">
+                         <h1>Please Pick An Option</h1>
+
+                         <div class="modal-button-container">
+                            <button onclick="closeOptionModal()">Continue</button>
+                        </div>
+
+                    </div>
+
+               </div>
+
+                <span>
+                    <input type="radio" id="option-one" name="option" class="radio" value="optionA">
+                    <label for="option-one" class="option" id="option-one-label">Skin friction</label>
+                </span>
+
+
+                <span>
+                    <input type="radio" id="option-two" name="option" class="radio" value="optionB">
+                    <label for="option-two" class="option" id="option-two-label" style="">Aerodynamic heating</label>
+                </span>
+
+
+                <span>
+                    <input type="radio" id="option-three" name="option" class="radio" value="optionC">
+                    <label for="option-three" class="option" id="option-three-label" style="">Increase in weight</label>
+                </span>
+
+
+                <span>
+                    <input type="radio" id="option-four" name="option" class="radio" value="optionD">
+                    <label for="option-four" class="option" id="option-four-label" style="">Increased lift force</label>
+                </span>
+
+
+            </div>
+
+            <div class="next-button-container">
+                <button onclick="handleNextQuestion()">Next Question</button>
+            </div>
+
+        </div>
+    </main>
+
+
+ 
+
+
+
+
+
+<script>
+const questions = [
+    {
+        question: "&NoBreak;What were the V-weapons collectively known as?",
+        optionA: "Wunderwaffen",
+        optionB: "Blitzkrieg",
+        optionC: "Luftwaffe",
+        optionD: "Aggregat 4",
+        correctOption: "optionA",
+        ep:"They were known as Wunderwaffen (wonder weapons) all others are wrong"
+    },
+
+    {
+        question: "⁠Where were the V-1 and V-2 missiles mainly manufactured?",
+        optionA: "Berlin",
+        optionB: "Mittelwerk",
+        optionC: "Nordhausen",
+        optionD: "Antwerp",
+        correctOption: "optionB",
+        ep:"A significant work force was made to create the V-weapons, mostly made up for Mittelbau-Dora camp."
+    },
+
+    {
+        question: "⁠Which of these was not a method used to defend against V-1 rockets?",
+        optionA: "Anti-aircraft guns",
+        optionB: "Barrage balloons",
+        optionC: "Fast- moving fighter jets",
+        optionD: "Large nets",
+        correctOption: "optionD",
+        ep: "Large nets were never used, with all other options being used as countermeasures to V-1 missiles."
+        
+    },
+
+    {
+        question: "What made the V-2 missile different from the V-1?",
+        optionA: "It was less expensive to produce",
+        optionB: "It struck with no audible warning",
+        optionC: "It had a higher success rate",
+        optionD: "It was less technically advanced",
+        correctOption: "optionB",
+        ep: "It had no audible warning, in contrast to the V-1’s loud buzzing sound earning it the name the “buzzbomb”."
+    }
+
+
+    ]
+</script>
+
+
+
+
+
+<script src="./V1V2QUIZ_files/quiz_script.js"></script></body></html>

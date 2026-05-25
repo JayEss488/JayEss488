@@ -1,0 +1,153 @@
+<!--template courtesy of:
+https://dev.to/sulaimonolaniran/building-a-simple-quiz-with-html-css-and-javascript-4elp
+
+but like you know I edited it a bit
+-->
+<head>
+    <link href="assets/img/favicon.png" rel="icon">
+    <title>Quiz</title>
+    <link href="quiz_style.css" rel="stylesheet">
+</head>
+
+
+
+
+<body onload="NextQuestion(0)">
+    <main>
+        <!-- creating a modal for when quiz ends -->
+        <div class="modal-container" id="score-modal">
+
+            <div class="modal-content-container">
+
+                <h1>Quiz Completed</h1>
+
+                <div class="grade-details">
+                    <p>Attempts : <span id="numQs"></span></p>
+                    <p>Right : <span id="right-answers"></span></p>
+                    <p>Wrong : <span id="wrong-answers"></span></p>
+                    <p>Percentage : <span id="grade-percentage"></span>%</p>
+                    <p ><span id="remarks"></span></p>
+                </div>
+
+                <div class="modal-button-container">
+                    <button onclick="closeScoreModal()">Continue</button>
+                </div>
+
+            </div>
+        </div>
+<!-- end of modal of quiz details-->
+
+        <div class="game-quiz-container">
+
+            <div class="game-details-container">
+                <h1>Score : <span id="player-score"></span> / <span id="ten"></span></h1>
+                <h1> Question : <span id="question-number"></span> / <span id="ten2"></span></h1>
+            </div>
+
+            <div class="game-question-container">
+                <h1 id="display-question"></h1><!--Where q text goes-->
+            </div>
+
+            <div class="game-options-container">
+
+               <div class="modal-container" id="option-modal">
+
+                    <div class="modal-content-container">
+                         <h1>Please Pick An Option</h1>
+
+                         <div class="modal-button-container">
+                            <button onclick="closeOptionModal()">Continue</button>
+                        </div>
+
+                    </div>
+
+               </div>
+
+                <span>
+                    <input type="radio" id="option-one" name="option" class="radio" value="optionA" />
+                    <label for="option-one" class="option" id="option-one-label"></label>
+                </span>
+
+
+                <span>
+                    <input type="radio" id="option-two" name="option" class="radio" value="optionB" />
+                    <label for="option-two" class="option" id="option-two-label"></label>
+                </span>
+
+
+                <span>
+                    <input type="radio" id="option-three" name="option" class="radio" value="optionC" />
+                    <label for="option-three" class="option" id="option-three-label"></label>
+                </span>
+
+
+                <span>
+                    <input type="radio" id="option-four" name="option" class="radio" value="optionD" />
+                    <label for="option-four" class="option" id="option-four-label"></label>
+                </span>
+
+
+            </div>
+
+            <div class="next-button-container">
+                <button onclick="handleNextQuestion()">Next Question</button>
+            </div>
+
+        </div>
+    </main>
+</body>
+
+ 
+
+
+
+
+
+<script>
+const questions = [
+    {
+        question: "What does CEP stand for in the context of missile accuracy?",
+        optionA: "Circular error probability",
+        optionB: "Circular error percentage",
+        optionC: "Circular error projection",
+        optionD: "Circular error precision",
+        correctOption: "optionA",
+        ep:"Explanation: CEP stands for circular error probability. 50% of missiles land within this range of the target."
+    },
+
+    {
+        question: "How do cruise missiles differ to ballistic missiles?",
+        optionA: "They are faster",
+        optionB: "They are continuously powered",
+        optionC: "They follow a straight trajectory",
+        optionD: "They use inertial guidance instead of GPS",
+        correctOption: "optionB",
+        ep:"Explanation: Ballistic missiles follow a parabolic trajectory and are only powered for their first stage of flight, whereas cruise missiles are continuously powered."
+    },
+
+    {
+        question: "What are the two main instruments used in preset guidance?",
+        optionA: "Accelerometers and gyroscopes",
+        optionB: "Barometers and thermometers",
+        optionC: "Compasses and radars",
+        optionD: "Lasers and cameras",
+        correctOption: "optionA",
+        ep:"Explanation: Preset guidance, a form of inertial guidance, uses acceleromaters to track acceleration, and gyroscopes to track direction. This allows the missile to keep track of where it is where it's heading."
+    },
+
+    {
+        question: "How does celestial navigation correct inaccuracies in inertial guidance? ",
+        optionA: "Using radar to track landmarks",
+        optionB: "Receiving updates from ground stations",
+        optionC: "Continuously recalibrating gyroscopes",
+        optionD: "Measuring positions of stars",
+        correctOption: "optionD",
+        ep:"Explanation: Celestial navigation uses a camera on the missile to keep track of where the stars are, therefore allowing it to calculate where it is."
+    }
+
+    ]
+</script>
+
+<script src="quiz_script.js"></script>
+
+

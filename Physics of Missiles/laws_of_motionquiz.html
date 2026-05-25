@@ -1,0 +1,153 @@
+<!--template courtesy of:
+https://dev.to/sulaimonolaniran/building-a-simple-quiz-with-html-css-and-javascript-4elp
+
+but like you know I edited it a bit
+-->
+<head>
+    <link href="assets/img/favicon.png" rel="icon">
+    <title>Quiz</title>
+    <link href="quiz_style.css" rel="stylesheet">
+</head>
+
+
+
+
+<body onload="NextQuestion(0)">
+    <main>
+        <!-- creating a modal for when quiz ends -->
+        <div class="modal-container" id="score-modal">
+
+            <div class="modal-content-container">
+
+                <h1>Quiz Completed</h1>
+
+                <div class="grade-details">
+                    <p>Attempts : <span id="numQs"></span></p>
+                    <p>Right : <span id="right-answers"></span></p>
+                    <p>Wrong : <span id="wrong-answers"></span></p>
+                    <p>Percentage : <span id="grade-percentage"></span>%</p>
+                    <p ><span id="remarks"></span></p>
+                </div>
+
+                <div class="modal-button-container">
+                    <button onclick="closeScoreModal()">Continue</button>
+                </div>
+
+            </div>
+        </div>
+<!-- end of modal of quiz details-->
+
+        <div class="game-quiz-container">
+
+            <div class="game-details-container">
+                <h1>Score : <span id="player-score"></span> / <span id="ten"></span></h1>
+                <h1> Question : <span id="question-number"></span> / <span id="ten2"></span></h1>
+            </div>
+
+            <div class="game-question-container">
+                <h1 id="display-question"></h1><!--Where q text goes-->
+            </div>
+
+            <div class="game-options-container">
+
+               <div class="modal-container" id="option-modal">
+
+                    <div class="modal-content-container">
+                         <h1>Please Pick An Option</h1>
+
+                         <div class="modal-button-container">
+                            <button onclick="closeOptionModal()">Continue</button>
+                        </div>
+
+                    </div>
+
+               </div>
+
+                <span>
+                    <input type="radio" id="option-one" name="option" class="radio" value="optionA" />
+                    <label for="option-one" class="option" id="option-one-label"></label>
+                </span>
+
+
+                <span>
+                    <input type="radio" id="option-two" name="option" class="radio" value="optionB" />
+                    <label for="option-two" class="option" id="option-two-label"></label>
+                </span>
+
+
+                <span>
+                    <input type="radio" id="option-three" name="option" class="radio" value="optionC" />
+                    <label for="option-three" class="option" id="option-three-label"></label>
+                </span>
+
+
+                <span>
+                    <input type="radio" id="option-four" name="option" class="radio" value="optionD" />
+                    <label for="option-four" class="option" id="option-four-label"></label>
+                </span>
+
+
+            </div>
+
+            <div class="next-button-container">
+                <button onclick="handleNextQuestion()">Next Question</button>
+            </div>
+
+        </div>
+    </main>
+</body>
+
+ 
+
+
+
+
+
+<script>
+const questions = [
+    {
+        question: "Who first published the laws of motion in his Principia?",
+        optionA: "Isaac Newton",
+        optionB: "Albert Einstein",
+        optionC: "Galileo",
+        optionD: "Johannes Kepler",
+        correctOption: "optionA",
+        ep:"Explanation: Isaac Newton first published this in 1687."
+    },
+
+    {
+        question: "What law of motion explains why a rocket experiences an equal and opposite force when gas particles are ejected?",
+        optionA: "Newton’s first law",
+        optionB: "Newton’s second law",
+        optionC: "Newton’s third law",
+        optionD: "Law of conservation of energy",
+        correctOption: "optionC",
+        ep:"Explanation: Newton's third law is the law that states every action has an equal and opposite reaction."
+    },
+
+    {
+        question: "What condition must be met for a missile to successfully launch?",
+        optionA: "Thrust must be less than weight",
+        optionB: "Thrust must be greater than weight",
+        optionC: "Thrust must be equal to weight",
+        optionD: "Thrust direction must be downward",
+        correctOption: "optionB",
+        ep:"Explanation: Thrust must be greater than weight, with the vertical component of thrust."
+    },
+
+    {
+        question: "Why does changing the angle of the exhaust nozzles during the missile’s transit allow for control over motion?",
+        optionA: "To adjust the missile’s weight",
+        optionB: "To reduce fuel consumption",
+        optionC: "To change the direction of acceleration",
+        optionD: "To increase atmospheric drag",
+        correctOption: "optionC",
+        ep:"Explanation: Changing the acceleration direction changes the missile direction, and all other answers are not affected by the angle change."
+    }
+
+    ]
+</script>
+
+<script src="quiz_script.js"></script>
+
+

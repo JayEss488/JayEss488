@@ -1,0 +1,358 @@
+
+  /*=============header============*/
+.header{
+  display:flex;
+  position:fixed;
+  top:0;
+  background-color: rgb(255, 66, 66);
+  width:100%;
+  z-index:99;
+}
+
+
+#logo{height:calc(5vw + 5vh);
+  min-height:40px;
+  transition: all 1s ease;
+  margin-left:8%;
+  margin-right:20%;
+  padding:1%;
+}
+
+.non-logo{display:flex;
+width:49vw;
+margin-right:1vw;
+justify-content:end;}
+
+.logo-item{width:50vw;}
+
+.header-item{
+  font-size:20px;
+  padding:0 2px;
+  display:flex;
+  margin:0 2%;
+}
+
+.header-img{width:5vw;
+padding:0 10px;
+margin:auto 1px;
+transition: all 1s ease;
+}
+
+.header-txt{
+  margin:auto 1px;
+  color:black;
+}
+
+.shrink .header-item .header-img{width:3vw;}
+
+/*below x px this happens*/
+@media(max-width:1100px){
+  .header-img{
+    display:none;
+  } 
+}
+
+
+/*==============text, grid, top image============
+.top-img{background-image: url("assets/img/nothing.jpg");
+display:flex;
+padding:2% 2% 8% 2%;
+justify-content: space-between;
+background-repeat: no-repeat;
+background-position: center;
+background-size: cover;}
+.top-img .item{
+  flex-grow: 1;
+  flex-basis: calc(50% - 7.5%);
+  margin-right: 15%;}
+.top-img .last-item{
+  margin-right:0;}*/
+
+
+
+.top-img{background-image: url("assets/img/sky_bgd.jpg");
+background-color: rgba(0, 0, 0, 0.5);/*opacity*/
+padding:1% 2%;
+font-size:25px;
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+min-height:60vh;
+/*height: calc(100vh - 12vw - 15px - 5vh)*/
+}
+
+.text-center {
+  font-size:60px;
+  transition: all 0.6s linear;
+  margin-right:45%;
+  margin-top:4%;
+  margin-bottom:3%;
+}
+
+.line-2{display:flex;}
+
+.line-2 .item{
+  margin:2% 1% 1% 0;
+width:50%;
+}
+.top-img .last-item{
+  margin-right:0;
+}
+
+@media (max-width: 1000px) {
+  .text-center{font-size:40px;
+  margin-right:20%}
+  .top-img{font-size:20px;}
+  .line-2{display:block;}
+}
+
+@media (min-height: 800px) and (min-width: 800px) {
+  .text-center{font-size:75px;
+	       margin-top:6%;
+  	       margin-bottom:5%;
+}
+  .top-img{font-size:30px;}
+}
+
+.q-links{
+  display:flex;
+  align-items: center;
+  background-color: rgb(123, 3, 3);
+}
+
+.contains-link{
+  width: 50%;
+  justify-content: center;
+  display: flex;
+  margin:0 1vw;
+}
+
+
+.q-links a{
+  font-size: 30px;
+  font-family:"Chakra Petch";
+}
+
+.q-links a:hover{
+  color:grey;
+}
+.divider{padding:1vh 0 2vh;
+background-color: rgb(194, 194, 194);}
+
+
+.section-header2{font-size: 20px;
+  color:white;
+margin-left:5%;
+}
+
+.authors{background-color: rgb(40, 40, 40);
+padding:0 1% 2% 1%;
+position:relative;
+top:25px;
+border-top:5px solid rgb(255, 66, 66);}
+
+#head-author{font-family: 'Chakra Petch';}
+
+.grid-container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 1%;
+margin:0 10%;
+}
+
+.grid-item2 {
+  display: flex;
+  flex-direction: column;
+  justify-content:center;
+  align-items: center
+}
+
+.grid-name{font-size:22px;
+color:white;
+
+}
+.sub-txt{font-size:16px;
+  color:white;
+margin-top:-2vh;}
+
+
+/*=============general=============*/
+
+body{
+transition:all 0.2s linear;
+margin-top: calc(6vw + 4vh + 5px);
+    margin-right: 0;
+    margin-bottom: 0;
+    margin-left: 0;
+font-family:'Inter', sans-serif;
+}
+
+a{
+text-decoration: none;
+}
+
+a{
+color:black;}
+
+a.grid-link{
+color:rgb(0, 68, 95);}
+
+a.footer-link{color:blue;
+}
+
+.grid-link:hover{color:rgb(5, 153, 153);}
+
+/*=======category sections===========*/
+
+
+.section-header{
+    display:flex;
+    border-bottom: 2px solid black;
+    border-top: 2px solid black;
+    align-items: center;
+    margin:2% 0;
+    padding:2vh 0;
+
+}
+
+.section-header h2 {
+    font-size: 50px;
+    color: rgb(255, 255, 255);
+    margin-left: 8%;
+    font-weight:400;
+    font-family: 'Chakra Petch';
+    margin-top:1vh;
+    margin-bottom:1vh;
+  }
+
+.section-header div{background-color: rgb(123,3,3);
+width:100%;
+}
+  
+.section-header p {
+margin-bottom: 0;
+}
+
+.img-fluid{max-width:500px;height:auto}
+
+.mx-1{margin-right:.25rem!important;margin-left:.25rem!important}
+
+.section-not-header{
+display: grid;
+grid-template-columns: 1fr 1fr 1fr 1fr; /* Adjust column width as needed */
+gap: 2vw; /* Adjust gap size between grid items as needed */
+overflow:hide;
+margin:0 8%;
+}
+/*========posts==========*/
+
+
+.post{
+    padding:10px;
+    background-color: rgb(248, 224, 176) ;
+}
+.post-entry{
+    margin-bottom: 30px;
+    display:flex;
+    flex-direction: column;
+    flex:0 0 auto;
+
+  }
+
+  /*align-items:center*/
+  
+  .post-entry-txt{
+    padding:10px;
+    
+
+  }
+
+  .post-entry img {
+    margin-bottom: 30px;
+    margin: 0 0 0 auto;
+    max-width:99%;
+  }
+  
+  .post-entry h2 {
+    margin-bottom: 20px;
+    font-size: 20px;
+    font-weight: 500;
+    line-height: 1.2;
+    font-weight: 500;
+  }
+  
+  .post-entry h2 a {
+    color: black;
+  }
+  
+  .post-entry.lg h2 {
+    font-size: 40px;
+    line-height: 1;
+  }
+  
+  .post-meta {
+    font-size: 11px;
+    letter-spacing: 0.07rem;
+    text-transform: uppercase;
+    font-weight: 600;
+    color: rgb(90, 107, 107);
+    margin-bottom: 10px;
+  }
+
+  .mb-l{margin-bottom:.5rem!important;
+font-size:30px;
+}
+
+  .mb-s{margin-bottom:1.5rem!important;
+font-size:15px;
+}
+
+
+
+/*--------------------------------------------------------------
+# Footer
+--------------------------------------------------------------*/
+  
+  .footer .footer-content {
+    padding: 60px 0;
+  }
+
+  .footer .footer-legal {
+    background: rgb(28, 28, 28);
+    padding: 40px 0; 
+    width:100%;  
+  }
+  
+  .footer .copyright strong {
+    font-weight: 400;
+    color:rgb(220, 220, 220);
+  }
+  
+  .footer .credits {
+    padding-top: 6px;
+    font-size: 13px;
+    color:rgb(212, 212, 212)
+  }
+
+  .centered {
+    text-align:center;
+  }
+
+  a.white{color:white;}
+  .white{color:white;}
+
+  .small{font-size:11px;}
+
+
+.footer {
+  background: rgb(211, 8, 8);
+  font-size: 16px;
+  text-align: center; /* Align content to center */
+  position: relative;
+  top:20px;
+  width:100%;
+  overflow:hidden;
+}
+
+
+

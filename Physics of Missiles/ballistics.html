@@ -1,0 +1,353 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+
+  <title>Trajectories of Ballistic Missiles</title>
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+
+  <!-- Favicons -->
+  <link href="assets/img/favicon.png" rel="icon">
+  <link href="assets/img/apple-touch-icon.png" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=EB+Garamond:wght@400;500&family=Inter:wght@400;500&family=Playfair+Display:ital,wght@0,400;0,700;1,400;1,700&display=swap" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+  <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
+  <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
+  <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
+  <link href="assets/vendor/aos/aos.css" rel="stylesheet">
+
+  <!-- Template Main CSS Files -->
+  <link href="assets/css/variables.css" rel="stylesheet">
+  <link href="assets/css/main.css" rel="stylesheet">
+
+
+  <!-- =======================================================
+  * Template Name: ZenBlog
+  * Updated: Sep 18 2023 with Bootstrap v5.3.2
+  * Template URL: https://bootstrapmade.com/zenblog-bootstrap-blog-template/
+  * Author: BootstrapMade.com
+  * License: https:///bootstrapmade.com/license/
+  ======================================================== -->
+</head>
+
+<body>
+
+ <!-- ======= Header ======= -->
+ <header id="header" class="header d-flex align-items-center fixed-top">
+  <div class="container-fluid container-xl d-flex align-items-center justify-content-between">
+
+    <a href="index.html" class="logo d-flex align-items-center">
+      <!-- Uncomment the line below if you also wish to use an image logo -->
+      <img class="logo-img" src="assets/img/logo.png" alt="">
+    </a>
+
+    <nav id="navbar" class="navbar">
+      <ul>
+        <li><a href="index.html#physics">Physics</a></li>
+        <img src="assets/img/missile_art1.png">
+        <li><a href="index.html#engineering">Engineering</a></li>
+        <img src="assets/img/missile_art4.jpg">
+        <li><a href="index.html#missiles">Quizzes</a></li>
+        <img src="assets/img/missile_art2.jpg">
+      </ul>
+    </nav><!-- .navbar -->
+
+
+  </div>
+
+</header><!-- End Header -->
+
+
+  <main id="main">
+
+    <section class="single-post-content">
+      <div class="container">
+        <div class="row">
+          <div class="post-content" data-aos="fade-up">
+
+            <!-- ======= the article itself ======= -->
+              <div class="single-post">
+                  <div class="post-meta"><span class="date">Physics</span> <span class="mx-1">&bullet;</span> <span>10 mins</span></div>
+                  <h1 class="mb-5">Trajectories of ballistic missiles</h1>
+                  <br />
+                  <p><span class="firstcharacter">A</span> ballistic missile's trajectory is made up of 3 stages: </p>
+                  <br>
+                  <br>
+                  <div class="list">
+                      <div>Boost phase</div>
+                      <div>Midcourse phase</div>
+                      <div>Re-entry phase</div>
+                  </div>
+
+                  <br>
+                  <figure class="my-4">
+                      <img src="assets/img/world_missile.png" alt="" class="img-fluid img-header">
+                      <figcaption>[<a style="color:Blue;" href=#ref1>1</a>] A diagram showing the 3 main stages of ballistic missile flight.</figcaption>
+                  </figure>
+                  <p>The first phase only lasts a few minutes and is where the missile is propelled by its engines. This phase is what gives ballistic missiles their name, with the term ballistic originating from the Greek word “to throw”. [<a style="color:Blue;" href=#ref2>2</a>]<p>
+                  <p>The midcourse phase represents the vast majority of the flight, where the missile just coasts. Due to the height at which these missiles fly, drag becomes much reduced so the main force acting on the missile is gravity. Despite this, the exponential way in which the atmosphere reduces with height means that even at very high altitudes, there will still be a small amount of drag.</p>
+                  <br>
+                  <figure class="my-4">
+                      <img src="assets/img/Traj_1.png" alt="" class="img-fluid" style="max-height: 350px">
+                      <figcaption>[<a style="color:Blue;" href=#ref3>3</a>] A diagram showing the exponential decrease in atmospheric pressure.</figcaption>
+                  </figure>
+                  <br>
+                  <p>The re-entry phase refers to the last couple of minutes of the flight. During this time, atmospheric effects become much greater, causing the missile to lose accuracy and heat up.</p>
+                  <br>
+                  <figure class="my-4">
+                      <img src="assets/img/Traj_2.png" alt="" class="img-fluid" style="max-height: 350px">
+                      <figcaption>[<a style="color:Blue;" href=#ref3>3</a>] A schematic diagram showing how a missiles flight is split into 3 stages.</figcaption>
+                  </figure>
+                  <br />
+                  <h3>What does range depend on?</h3>
+                  <br />
+                  <br />
+                  <p>The range of a missile depends on two main things:</p>
+                  <div class="list">
+                      <div>Burnout angle</div>
+                      <div>Burnout speed</div>
+                      <br />
+                  </div>
+                  <p>The burnout angle refers to the angle of the missile after its boost phase. The greatest range is given by a burnout angle of 45°. Later we will derive this mathematically.</p>
+                  <br />
+                  <figure class="my-4">
+                      <img src="assets/img/Traj_3.png" alt="" class="img-fluid med-img">
+                      <figcaption>[<a style="color:Blue;" href=#ref3>3</a>] Here we can see how an angle of 45° provides greater range than other angles.</figcaption>
+                  </figure>
+                  <br />
+                  <p>So far we have been working with the assumption that the Earth is flat, which can be considered more or less true with short range missiles.</p>
+                  <p>However, the curvature of the earth means that the maximum range angle is actually less than 45°, meaning that the greater the range of the missile, the greater the impact of a curved earth and a smaller maximum range angle. [<a style="color:Blue;" href=#ref1>1</a>]</p>
+                  <br />
+                  <figure class="my-4">
+                      <img src="assets/img/Traj_4.png" alt="" class="img-fluid med-img">
+                      <figcaption>[<a style="color:Blue;" href=#ref1>1</a>] A graph showing how the optimal burnout angle for maximum range decreases as the range of the trajectory increases due to the curvature of the earth becoming more significant.</figcaption>
+                  </figure>
+                  <br />
+                  <p>
+                      The 2nd parameter that influences the missiles range is of course its speed after the boost phase. This is dependent on multiple things, such as the duration of the boost phase, the mass of the missile, and the type of engine used.
+                  </p>
+                  <br />
+                  <figure class="my-4">
+                      <img src="assets/img/Traj_5.png" alt="" class="img-fluid med-img">
+                      <figcaption>[<a style="color:Blue;" href=#ref1>1</a>] A graph showing the relationship between burnout speed and the range of the missile.</figcaption>
+                  </figure>
+                  <br />
+                  <p>Here are some typical burnout parameters of real life ballistic missiles:</p>
+                  <br />
+                  <figure>
+                      <img src="assets/img/Traj_6.png" alt="" class="img-fluid" style="max-height: 250px">
+                      <figcaption>[<a style="color:Blue;" href=#ref1>1</a>] This table includes burnout parameters of real missiles. Note how the burnout angle decreases as the range of the missiles increases.</figcaption>
+                  </figure>
+                  <br />
+
+                  <h3>
+                      The maths describing trajectories
+                  </h3>
+                  <br />
+                  <br />
+                  <p>We will only consider the mathematics describing the trajectory for a flat Earth, since this makes the maths far simpler. We will also conveniently ignore air resistance, and assume that \(g\), the acceleration due to gravity, is constant everywhere.</p>
+                  <p>Let’s first split up the missiles motion into its two component parts: its horizontal motion (along the x axis), and its vertical motion (along the y axis).</p>
+                  <br />
+                  <figure>
+                      <img src="assets/img/Traj_7.png" alt="" class="img-fluid" style="max-height: 350px">
+                      <figcaption>[<a style="color:Blue;" href=#ref3>3</a>] A sketch demonstrating visually how a missiles velocity can be split into its horizontal and vertical compoments.</figcaption>
+                  </figure>
+                  <br />
+                  <p>If we call the missiles initial velocity \(v_0\) , then the initial \(x\) component velocity, \(v_x\), and \(y\) component velocity ,\(v_y\),  are:</p>
+
+                  <p class="math">\(v_x=v_0 \cos(θ) \)</p>
+                  <p class="math">
+                      \(v_y=v_0 \sin(θ) \)
+                  </p>
+                  [<a style="color:Blue;" href=#ref3>3</a>]
+                  <br />
+                  <br />
+                  <p>Since we assume the missile is only being acted upon by constant gravity, and therefore is experiencing constant acceleration, we can use the following SUVAT equation:</p>
+                  <p class="math">\(s= ut +{1\over 2} at^2\)</p>
+                  <p>This will give us the displacement of the missile after a certain amount of time. Again, we will be splitting the displacement into its x and y components.</p>
+                  <p>For the y component, we have gravity acting downwards and so have \(a=-g\), such that:</p>
+                  <p class="math">\(y=v_0 \sin (θ) t - {1 \over 2} g t^2\)</p>
+                  <p>For the x component, we don’t have any acceleration (remember that we are ignoring air resistance), so:</p>
+                  <p class="math">\(x=v_0 \cos (θ) t\)</p>
+                  <p>These 2 equations completely describe the trajectory of the missile. With them, we can now calculate the range of the missile, and from this, we can calculate the angle that gives us the most range.</p>
+                  <p>The range of the missile is of course the distance between where the missile is fired, and where it hits the ground. When it hits the ground, \(y=0\), so the first thing we do is set the equation for y to zero:</p>
+                  <p class="math">
+                      \(y= v_0 \sin (θ) t -{1 \over 2} g t^2 =0\)
+                  </p>
+                  <p>This is a quadratic in <var>t</var>, which we can solve, giving us the time at which the missile lands. Using the quadratic equation:</p>
+                  <p class="math">\(t={-b \pm \sqrt{b^2 - 4ac}\over 2a}\)</p>
+                  <p>We get:</p>
+                  <p class="math">\(t={-v_0 \sin \theta \pm \sqrt{v_0^2 \sin^2 \theta} \over -g}\)</p>
+
+
+                  <p>This gives us two solutions, as we would expect. One is zero (as the missile is being launched), and the other is:</p>
+                  <p class="math">\(t= {2v_0 \sin \theta\over g}\)</p>
+                  <p>This is the time at which the missile lands. Now that we have this time, we can put this in our equation for the x displacement to get the range of the missile:</p>
+                  <p class="math">\(x=v_0 \cos (θ) {2v_0 \sin (θ) \over g} = {2 v_0^2 \cos (θ) \sin (θ) \over g}\)</p>
+                  <p>We can simplify this expression by using the following trigonometric identity:</p>
+                  <p class="math">\(2\cos(θ)\sin(θ)=\sin(2θ)\)</p>
+                  <p>To get:</p>
+                  <p class="math">\(Range={v_0^2\sin (2θ) \over g}\)</p>
+                  [<a style="color:Blue;" href=#ref5>5</a>]
+                  <br />
+                  <br />
+                  <p>Now that we have the range, we can work out which angle gives us the maximum range. To do this we just need to ask ourselves when \(\sin (2\theta)\) is biggest, between 0° and 90°. We can use the fact that \(\sin(2\theta)\) is just a sin wave squashed by a factor of 2. We know that a sin wave has a maximum at 90°, and so \(\sin (2\theta)\) has a maximum at 45°.</p>
+                  <br />
+                  <figure>
+                      <img src="assets/img/Traj_8.png" alt="" class="img-fluid" style="max-height: 250px">
+                      <figcaption>[<a style="color:Blue;" href=#ref6>6</a>] Here we can see the relationship between sin(ɵ) and sin(2ɵ), and why sin(2ɵ) has a maximum at 45°.</figcaption>
+                  </figure>
+                  <br />
+                  <p>Below is a link to a model that allows you to change burnout angle and velocity and see what effect this has on a missile's trajectory.</p>
+                  <div class="fun-fact fun-margin">
+                      <a href="Trajectories of missiles.html">Try our Ballistics Interactive!</a>
+                  </div>
+                  <br />
+                  <h3 class=>Quiz</h3>
+                  <br />
+                  <br />
+                  <p>Test your knowledge with this article's quiz.</p>
+                  <div class="fun-fact fun-margin">
+                      <a href="ballistics_quiz.html">Take the quiz here!</a>
+                  </div>
+
+                  <br />
+                  <h3 class=>Exam style questions</h3>
+                  <br />
+                  <br />
+                  <p>Preparing for a test? Try our exam style questions!</p>
+                  <br />
+                  <p>All the following questions make the same assumptions that the article does. I.e. we assume no air resistance, that the Earth is flat and that the acceleration due to gravity is constant everywhere at \(g = 9.81 ms^{-2}.\)</p>
+                  <br />
+                  <br />
+                  <h5 class=>Question 1</h5>
+                  <br />
+                  <p>Your cousin Throckmorton wants to launch a rocket that has a vertical component of speed twice as great as its horizontal component. At what angle from the horizontal should he launch his rocket?</p>
+                  <br />
+                  <h5 class=>Answer:</h5>
+                  <br />
+                  <video width="640" height="480" controls>
+                      <source src="assets/videos/Q1.mp4" type="video/mp4">
+                  </video>
+                  <br />
+                  <br />
+                  <br />
+                  <h5 class=>Question 2</h5>
+                  <br />
+                  <p>Assuming Throckmorton launches his rocket with an initial speed, \(v_0\), of \(100 ms^{−1}\), what is the horizontal and vertical component of its speed halfway through the rockets flight?</p>
+                  <br />
+                  <h5 class=>Answer:</h5>   
+                  <video width="640" height="480" controls>
+                      <source src="assets/videos/Q2.mp4" type="video/mp4">
+                  </video>
+                  <br />
+                  <br />
+                  <br />
+                  <h5 class=>Question 3</h5>
+                  <br />
+                  <p>What is the range of this rocket?</p>
+                  <br />
+                  <h5 class=>Answer:</h5>
+                  <br />
+                  <video width="640" height="480" controls>
+                      <source src="assets/videos/Q3.mp4" type="video/mp4">
+                  </video>
+                  <br />
+                  <br />
+                  <br />
+                  <h5 class=>Bonus question</h5>
+                  <br />
+                  <p>Throckmorton wants to hit a target exactly 1km away. If he is using the same rocket as previously, with the same initial velocity and angle, assuming the wind is travelling in the same direction as the rocket, what wind speed does he need for this to happen?</p>
+                  <br />
+                  <h5 class=>Answer:</h5>
+                  <br />
+                  <video width="640" height="480" controls>
+                      <source src="assets/videos/Bonus question.mp4" type="video/mp4">
+                  </video>
+
+
+
+                  <p class="next">See next: <a href="laws_of_motion.html" class="anext">Laws of Motion</a></p>
+                  <br>
+                  <h5>References</h5>
+                  <p id="ref1" class="references">
+                      [1] Online Etymology Dictionary. <a style="color:Blue;" href="https://www.etymonline.com/word/ballistic">"ballistic (adj.)"</a> Retrieved 23/01/2024
+                      <br id="ref2"> [2] Image created by N. Piercy
+                      <br id="ref3"> [3] Union of concerned scientists, David Wright <a style="color:Blue;" href="https://s3.amazonaws.com/ucs-webinars/Summer-Symposium/Missile-webinar-slides-6-19-14.pdf">“An Introduction to Ballistic Missiles”</a> Retrieved 23/01/2024
+                      <br id="ref4"> [4] Introduction to Biomechanics, Paul Peter Urone, Roger Hinrichs <a style="color:Blue;" href="https://pressbooks.openedmb.ca/introtobiomechanics/chapter/3-4-projectile-motion/">“3.4 Projectile Motion”</a> Retrieved 04/02/2024
+                      <br id="ref5"> [5] Fuentes, Arianne G., Sean B. Larupay, and I. C. T. Strand. <a style="color:Blue;" href="https://www.researchgate.net/profile/Sean-Larupay/publication/376133591_Projectile_Motion_using_PhET_Simulation/links/656a456cb1398a779dcec246/Projectile-Motion-using-PhET-Simulation.pdf">“Experiment 1: Projectile Motion using PhET Simulation.”</a> Retrieved 04/02/2024
+                      <br id="ref6"> [6] Image created by N Piercy with the aid of  <a style="color:Blue;" href="https://www.desmos.com/calculator">Desmos</a>
+              </div><!-- End Single Post Content -->
+
+            
+
+          </div>
+          
+
+          
+        </div>
+      </div>
+    </section>
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  <footer id="footer" class="footer">
+
+    <div class="footer-content">
+      <div class="container">
+          <div class="col-6 col-lg-2">
+            <h3 class="footer-heading">More Articles</h3>
+            <ul class="footer-links list-unstyled">
+              <li><a href="guidance.html"><i class="bi bi-chevron-right"></i> Guidance</a></li>
+              <li><a href="v1v2.html"><i class="bi bi-chevron-right"></i> V-Weapons</a></li>
+              <li><a href="laws_of_motion.html"><i class="bi bi-chevron-right"></i> Laws of Motion</a></li>
+            </ul>
+          </div>
+
+          
+        </div>
+      </div>
+    </div>
+
+    <div class="footer-legal">
+
+            <div class="copyright centered">
+              <strong><span>The Amazing Physics of Missiles </span></strong><a href="single-post.html"><img src="assets/img/favicon.png" alt=""></a>
+            </div>
+            <div class="credits centered">
+              A Physics in Society Project
+            </div>
+            <div class="credits centered" a>
+              Template by <a href="https://bootstrapmade.com/">BootstrapMade</a>
+            </div>
+    </div>
+
+  </footer>
+
+  <a href="#" class="scroll-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+
+  <!-- Vendor JS Files -->
+  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
+  <script src="assets/vendor/aos/aos.js"></script>
+  <script src="assets/vendor/php-email-form/validate.js"></script>
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script id="MathJax-script" async src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+
+  <!-- Template Main JS File -->
+  <script src="assets/js/main.js"></script>
+
+
+</body>
+
+</html>
