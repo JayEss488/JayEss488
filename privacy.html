@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8" />
+  <title>Refill — Privacy Policy</title>
+  <link rel="stylesheet" href="styles.css" />
+  <style>
+    main { max-width: 720px; }
+    h2 { font-size: 16px; margin-top: 28px; }
+    p, li { line-height: 1.5; }
+    .updated { color: #777; font-size: 13px; margin-top: -4px; }
+  </style>
+</head>
+<body>
+  <main>
+    <h1>Refill — Privacy Policy</h1>
+    <p class="updated">Last updated: 3 July 2026</p>
+
+    <p>Refill is a browser extension that fills in web forms using a profile you write
+       yourself or that is saved from forms you fill in. This page explains exactly what data the extension touches, where it
+       goes, and what it never does.</p>
+
+    <h2>What Refill stores</h2>
+    <ul>
+      <li><strong>Your profile</strong> — whatever you type or paste on the options page
+        (e.g. name, email, phone, address, preferences), plus any fields it later learns
+        automatically from forms you fill in and submit yourself.</li>
+      <li><strong>Your AI provider API key</strong> — the Groq or Mistral key you paste in
+        during setup ("bring your own key").</li>
+      <li><strong>Error logs</strong> — only if you turn on Testing mode (off by default),
+        for your own debugging.</li>
+    </ul>
+    <p>All of this is stored using your browser's local extension storage
+      (<code>chrome.storage.local</code>), on your own device only. There is no server
+      operated by us, and we never receive, see, or have access to any of it.</p>
+
+    <h2>What gets sent to a third party, and why</h2>
+    <p>Refill is "bring your own key": you choose either Groq or Mistral as your AI
+      provider and supply your own API key for it. The <strong>only</strong> data that
+      ever leaves your browser is sent directly from your browser to that provider's API,
+      using your key, for these specific purposes:</p>
+    <ul>
+      <li>When you save your profile, the text you wrote is sent so the AI can turn it
+        into structured fields (name, email, etc.).</li>
+      <li>When you click "Fill this page" or use "Paste answers", your structured
+        profile data and the labels of the form fields on the current page are sent so
+        the AI can decide what value belongs in which field.</li>
+    </ul>
+    <p>This request goes straight from your browser to Groq's or Mistral's own servers —
+      it never passes through us or any server we operate. We don't see the contents of
+      that request or its response. See Groq's or Mistral's own privacy policy
+      (whichever you choose) for how they handle API requests.</p>
+    <p>Your API key is sent only in an HTTPS request header directly to your chosen
+      provider's API. It is never logged, never included in a URL, and never sent
+      anywhere else.</p>
+
+    <h2>What Refill deliberately ignores</h2>
+    <p>Values that look like passwords, credit card numbers, CVVs, national ID/SSNs, or
+      passport numbers are actively filtered out and never saved to your profile, even
+      if they were typed into a form you submitted. Password-type fields are excluded
+      outright.</p>
+
+    <h2>Your control over your data</h2>
+    <p>Nothing expires automatically. You can delete any individual saved field, or clear
+      your entire profile, from the options page at any time — this is immediate,
+      local, and permanent. Uninstalling the extension removes everything Chrome stored
+      for it.</p>
+
+    <h2>What we don't do</h2>
+    <p>We don't sell or rent your data, run ads, use analytics or tracking scripts, or
+      share anything with data brokers. We don't operate any backend server that your
+      data passes through.</p>
+
+    <h2>Children's privacy</h2>
+    <p>Refill is not directed at children under 13, and we don't knowingly collect data
+      from them.</p>
+
+    <h2>Changes to this policy</h2>
+    <p>If this policy changes, the "Last updated" date above will change too.</p>
+
+    <h2>Contact</h2>
+    <p>Questions or concerns: <a href="mailto:jstephens650@gmail.com">jstephens650@gmail.com</a></p>
+  </main>
+</body>
+</html>
