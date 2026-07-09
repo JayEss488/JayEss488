@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>James Stephens | Personal Portfolio</title>
     <meta name="description" content="Personal website showcasing projects, writing by James.">
+    <link rel="icon" type="image/png" href="castle_bg.png">
     <link rel="stylesheet" href="style.css">
     <!-- Google Fonts for Modern Typography -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -24,10 +25,17 @@
     <nav class="navbar">
         <div class="nav-content">
             <div class="logo">JS</div>
-            <ul class="nav-links">
+            <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navLinks">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-links" id="navLinks">
                 <li><a href="#about">About</a></li>
-                <li><a href="#projects">Projects</a></li>
+                <li><a href="#games">Games</a></li>
+                <li><a href="#software">Software</a></li>
                 <li><a href="#writing">Writing</a></li>
+                <li><a href="#socials">Socials</a></li>
             </ul>
         </div>
     </nav>
@@ -38,112 +46,158 @@
             <h1 class="hero-title">Hello, I'm <span class="highlight">James</span></h1>
             <p class="hero-subtitle">This is where I'll put some of my writing, coding and other projects.</p>
             <div class="hero-cta">
-                <a href="#projects" class="btn btn-primary">View My Work</a>
+                <a href="#games" class="btn btn-primary">View My Work</a>
                 <a href="#contact" class="btn btn-secondary">Get in Touch</a>
             </div>
         </header>
 
-        <!-- Projects Section -->
-        <section id="projects" class="section">
-            <h2 class="section-title">Digital Projects (Larger to Smaller)</h2>
+        <!-- Games Section -->
+        <section id="games" class="section">
+            <h2 class="section-title">Games</h2>
             <div class="grid">
-                <article class="card">
-                    <div class="card-image" style="background-image: url('poster_duo.png');"></div>
+                <a class="card" href="https://jay-650.itch.io/this-means-war" download>
+                    <div class="card-image card-image--tall" style="background-image: url('poster_duo.png');"></div>
                     <div class="card-content">
                         <h3>THIS MEANS WAR: Visual Novel</h3>
                         <p>Extracurriculars have never been so lethal.</p>
-                        <a href="https://jay-650.itch.io/this-means-war" class="link-btn" download>Go to itch.io
-                            &rarr;</a>
+                        <span class="link-btn">Go to itch.io &rarr;</span>
                     </div>
-                </article>
-                <article class="card">
-                    <!-- Used an inline style to apply the image directly -->
-                    <div class="card-image" style="background-image: url('cover_preres_alt.png');"></div>
+                </a>
+                <a class="card" href="https://jay-650.itch.io/thismeansrobbery">
+                    <div class="card-image card-image--tall" style="background-image: url('tmr.png');"></div>
                     <div class="card-content">
-                        <h3>Preres.: Youngest Children</h3>
-                        <p>My first finished story.</p>
-                        <a href="Preres the Youngest Children_v4.epub" class="link-btn" download>Download Story (EPUB)
-                            &rarr;</a>
+                        <h3>This Means Robbery</h3>
+                        <p>Time to steal a 100% holy relic.</p>
+                        <span class="link-btn">Go to itch.io &rarr;</span>
                     </div>
-                </article>
-
-                <article class="card">
-                    <div class="card-image" style="background-image: url('cover_an.png');"></div>
-                    <div class="card-content">
-                        <h3>L'Annee (Short Film)</h3>
-                        <p>A 30 minute comedy about my year abroad.</p>
-                        <a href="https://youtu.be/da2OR0sHz_8?si=iQDoXKQQIc5Oow2_" class="link-btn">View on Youtube
-                            &rarr;</a>
-                    </div>
-
-                </article>
-                <article class="card">
+                </a>
+                <a class="card" href="BYOB_2022.zip" download>
                     <div class="card-image" style="background-image: url('byob.png');"></div>
                     <div class="card-content">
                         <h3>Build Your Own Battleship</h3>
                         <p>My 2022 A-Level Computer Science project.</p>
-                        <a href="BYOB_2022.zip" class="link-btn" download>Download Game (zip)
-                            &rarr;</a>
+                        <span class="link-btn">Download Game (zip) &rarr;</span>
+                    </div>
+                </a>
+            </div>
+        </section>
+
+        <!-- Software Section -->
+        <section id="software" class="section">
+            <h2 class="section-title">Software</h2>
+            <div class="grid">
+                <a class="card" href="https://chromewebstore.google.com/detail/refill/affbnfjgjmfcbdocbhoakbhbohmihbep?hl=en-US&utm_source=ext_sidebar">
+                    <div class="card-image" style="background-image: url('Simple_AI_forms_2.png');"></div>
+                    <div class="card-content">
+                        <h3>Simple AI Forms</h3>
+                        <p>Most AI autofill extensions aren't very practical to use. That's why I made this.</p>
+                        <span class="link-btn">Get it on Chrome Web Store &rarr;</span>
+                    </div>
+                </a>
+                <article class="card">
+                    <div class="card-image" style="background-image: url('job_auto.png');"></div>
+                    <div class="card-content">
+                        <h3>Job Search Automation</h3>
+                        <p>AI job automation platforms are typically bad at finding roles that fit. This aims to change that.</p>
+                        <span class="status-badge">In Development</span>
                     </div>
                 </article>
-                <article class="card">
+                <a class="card" href="Physics of Missiles/index.html">
                     <div class="card-image" style="background-image: url('pom_cover.jpg');"></div>
                     <div class="card-content">
                         <h3>Physics of Missiles</h3>
                         <p>A website for a Year 2 team project.</p>
-                        <a href="Physics of Missiles/index.html" class="link-btn">Link to Site
-                            &rarr;</a>
+                        <span class="link-btn">Link to Site &rarr;</span>
                     </div>
-                </article>
-
-                <article class="card">
-                    <div class="card-image" style="background-image: url('twine/swords.png')"></div>
-                    <div class="card-content">
-                        <h3>Mini Twine Games</h3>
-                        <p>A few games I made in a weekend.</p>
-                        <a href="twine/The Abandoned Submarine v5.html" class="link-btn">Abandoned Sub
-                            &rarr;</a>
-                        <a href="twine/Investo.html" class="link-btn">Investo
-                            &rarr;</a>
-                    </div>
-                </article>
-
-
+                </a>
             </div>
         </section>
 
         <!-- Writing / Files Section -->
         <section id="writing" class="section">
-            <h2 class="section-title">Writing & Files</h2>
-            <p style="color: var(--text-muted); margin-bottom: 2rem;">A space for a few of the many drafts I have.</p>
+            <h2 class="section-title">Writing & Videos</h2>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">A space for a few of the many drafts and
+                videos I have.</p>
             <div class="grid">
-                <div class="file-card">
-                    <div class="file-icon">📄</div>
-                    <div class="file-info">
-                        <h3>Old Preres</h3>
-                        <p>docx</p>
+                <a class="card" href="Preres the Youngest Children_v4.epub" download>
+                    <!-- Used an inline style to apply the image directly -->
+                    <div class="card-image" style="background-image: url('cover_preres_alt.png');"></div>
+                    <div class="card-content">
+                        <h3>Preres.: Youngest Children</h3>
+                        <p>My first finished story.</p>
+                        <span class="link-btn">Download Story (EPUB) &rarr;</span>
                     </div>
-                    <!-- The 'download' attribute prompts file downloading -->
-                    <a href="Preres ancienne- Josh&Eliz.docx" class="btn btn-sm btn-primary" download>Download</a>
-                </div>
-
-                <div class="file-card">
+                </a>
+                <a class="card" href="https://youtu.be/da2OR0sHz_8?si=iQDoXKQQIc5Oow2_">
+                    <div class="card-image" style="background-image: url('cover_an.png');"></div>
+                    <div class="card-content">
+                        <h3>L'Annee (Short Film)</h3>
+                        <p>A 30 minute comedy about my year abroad.</p>
+                        <span class="link-btn">View on Youtube &rarr;</span>
+                    </div>
+                </a>
+            </div>
+            <div class="grid" style="margin-top: 2rem;">
+                <a class="file-card" href="cdo.docx" download>
                     <div class="file-icon">📝</div>
                     <div class="file-info">
                         <h3>Club de L'Occulte Draft</h3>
                         <p>docx</p>
                     </div>
-                    <a href="cdo.docx" class="btn btn-sm btn-primary" download>Download</a>
-                </div>
+                    <span class="btn btn-sm btn-primary">Download</span>
+                </a>
 
-                <div class="file-card">
+                <a class="file-card" href="Yuiri.docx" download>
                     <div class="file-icon">📝</div>
                     <div class="file-info">
                         <h3>Le Traitre- short story</h3>
                         <p>docx</p>
                     </div>
-                    <a href="Yuiri.docx" class="btn btn-sm btn-primary" download>Download</a>
-                </div>
+                    <span class="btn btn-sm btn-primary">Download</span>
+                </a>
+            </div>
+        </section>
+
+        <!-- Socials Section -->
+        <section id="socials" class="section">
+            <h2 class="section-title">Socials</h2>
+            <p style="color: var(--text-muted); margin-bottom: 2rem;">Where else to find me.</p>
+            <div class="grid">
+                <a class="file-card" href="https://instagram.com/jaystep_50">
+                    <div class="file-icon">📷</div>
+                    <div class="file-info">
+                        <h3>Instagram</h3>
+                        <p>@jaystep_50</p>
+                    </div>
+                    <span class="btn btn-sm btn-primary">Follow</span>
+                </a>
+
+                <a class="file-card" href="https://instagram.com/durham_model_climate_26">
+                    <div class="file-icon"><img src="mcc_image.png" alt="Durham MCC logo"></div>
+                    <div class="file-info">
+                        <h3>Durham MCC 26</h3>
+                        <p>@durham_model_climate_26</p>
+                    </div>
+                    <span class="btn btn-sm btn-primary">Follow</span>
+                </a>
+
+                <a class="file-card" href="https://youtube.com/@JayCreative_pqp">
+                    <div class="file-icon">▶️</div>
+                    <div class="file-info">
+                        <h3>YouTube</h3>
+                        <p>@JayCreative_pqp</p>
+                    </div>
+                    <span class="btn btn-sm btn-primary">Subscribe</span>
+                </a>
+
+                <a class="file-card" href="https://jay-650.itch.io">
+                    <div class="file-icon">🎮</div>
+                    <div class="file-info">
+                        <h3>itch.io</h3>
+                        <p>jay-650</p>
+                    </div>
+                    <span class="btn btn-sm btn-primary">Visit</span>
+                </a>
             </div>
         </section>
     </main>
@@ -155,6 +209,25 @@
             <p>I can be reached at jstephens650@gmail.com</p>
         </div>
     </footer>
+
+    <script>
+        const navToggle = document.getElementById('navToggle');
+        const navLinks = document.getElementById('navLinks');
+
+        navToggle.addEventListener('click', () => {
+            const isOpen = navLinks.classList.toggle('open');
+            navToggle.classList.toggle('open', isOpen);
+            navToggle.setAttribute('aria-expanded', isOpen);
+        });
+
+        navLinks.querySelectorAll('a').forEach((link) => {
+            link.addEventListener('click', () => {
+                navLinks.classList.remove('open');
+                navToggle.classList.remove('open');
+                navToggle.setAttribute('aria-expanded', 'false');
+            });
+        });
+    </script>
 </body>
 
 </html>
