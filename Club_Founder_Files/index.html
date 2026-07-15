@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sunday morning social cycle - Chalkwell Park</title>
+<style>
+  :root {
+    --bg: oklch(0.97 0.014 85);
+    --ink: oklch(0.24 0.02 165);
+    --teal: oklch(0.28 0.06 175);
+    --teal-2: oklch(0.42 0.07 175);
+    --coral: oklch(0.6 0.14 35);
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--bg);
+    color: var(--ink);
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif;
+    min-height: 100vh;
+    padding: 64px 20px 80px;
+  }
+  .wrap { max-width: 640px; margin: 0 auto; }
+  .kicker {
+    font-size: 13px; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--teal-2); font-weight: 700; margin-bottom: 12px;
+  }
+  h1 {
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 40px; line-height: 1.15; margin: 0 0 16px;
+    color: var(--teal); text-wrap: pretty;
+  }
+  .lede { font-size: 17px; line-height: 1.6; opacity: 0.82; margin: 0 0 28px; max-width: 56ch; }
+  .card {
+    background: #fff; border: 1px solid oklch(0.24 0.02 165 / 0.1);
+    border-radius: 16px; padding: 30px 28px;
+  }
+  .launch-note {
+    background: #fff; border: 1px solid oklch(0.24 0.02 165 / 0.1);
+    border-radius: 16px; padding: 16px 22px; margin-bottom: 20px;
+    font-size: 14px; font-weight: 700; color: var(--teal);
+    display: flex; align-items: center; gap: 10px;
+  }
+  .launch-note .dot { width: 8px; height: 8px; border-radius: 999px; background: var(--coral); flex: none; }
+  label { display: block; font-size: 13px; font-weight: 700; margin-bottom: 7px; color: var(--teal); }
+  .field { margin-bottom: 20px; }
+  .field.last { margin-bottom: 22px; }
+  input, select {
+    width: 100%; padding: 12px 13px; font-size: 15px;
+    border: 1px solid oklch(0.24 0.02 165 / 0.16); border-radius: 9px;
+    background: var(--bg); color: var(--ink); font-family: inherit;
+  }
+  input:focus, select:focus { border-color: var(--teal-2); outline: none; }
+  button {
+    width: 100%; padding: 14px; font-size: 15px; font-weight: 700;
+    background: var(--coral); color: #fff; border: none; border-radius: 9px; cursor: pointer;
+  }
+  button:active { transform: scale(0.99); }
+  button:disabled { opacity: 0.7; cursor: default; }
+  .err { color: oklch(0.6 0.16 35); font-size: 13px; margin-top: 12px; }
+  .fine {
+    border-top: 1px solid oklch(0.24 0.02 165 / 0.1);
+    margin-top: 24px; padding-top: 18px;
+    display: flex; flex-direction: column; gap: 10px;
+  }
+  .fine p { font-size: 13px; opacity: 0.65; margin: 0; line-height: 1.55; }
+  .privacy-inline { font-size: 12px; opacity: 0.6; margin: 8px 0 0; line-height: 1.5; }
+  .host {
+    display: flex; align-items: center; gap: 16px;
+    background: #fff; border: 1px solid oklch(0.24 0.02 165 / 0.1);
+    border-radius: 16px; padding: 18px 20px; margin-bottom: 20px;
+  }
+  .host img {
+    width: 64px; height: 64px; border-radius: 999px; object-fit: cover; flex: none;
+  }
+  .host .who { font-weight: 700; color: var(--teal); font-size: 15px; margin-bottom: 3px; }
+  .host .blurb { font-size: 14px; opacity: 0.75; line-height: 1.5; }
+  .map-block { margin-bottom: 20px; }
+  .map-block iframe {
+    width: 100%; height: 220px; border: 1px solid oklch(0.24 0.02 165 / 0.12);
+    border-radius: 16px; display: block;
+  }
+  .map-caption {
+    font-size: 12px; opacity: 0.6; margin: 8px 2px 0;
+    display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
+  }
+  .map-caption a { color: var(--teal-2); }
+  .success { text-align: center; padding: 24px 0; }
+  .success h3 { font-family: Georgia, serif; color: var(--teal); margin: 0 0 10px; font-size: 22px; }
+  .success p { opacity: 0.75; margin: 0 0 4px; font-size: 15px; }
+  .success p.sub { opacity: 0.6; font-size: 13px; }
+  .hidden { display: none; }
+</style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="kicker">New in Southend</div>
+    <h1>Sunday morning social cycle - Chalkwell Park</h1>
+    <p class="lede">A casual ride - not a racing club. To meet in Chalkwell Park, in front of the metal building. Free to join, no membership required.</p>
+
+    <div class="host">
+      <img src="run-by.jpg" alt="James, who runs the ride">
+      <div>
+        <div class="who">Run by James</div>
+        <div class="blurb">I cycle quite a lot around Southend so that's why I wanted to make something like this. The idea is to do a bit more exercise on the weekend (as opposed to tons of coding).</div>
+      </div>
+    </div>
+
+    <div class="map-block">
+      <iframe
+        title="Meeting point - Chalkwell Park"
+        loading="lazy"
+        src="https://www.openstreetmap.org/export/embed.html?bbox=0.6716%2C51.5411%2C0.6836%2C51.5471&layer=mapnik&marker=51.544094%2C0.677628">
+      </iframe>
+      <div class="map-caption">
+        <span>Meeting point: Chalkwell Park, in front of the metal building</span>
+        <a href="https://www.openstreetmap.org/?mlat=51.544094&amp;mlon=0.677628#map=17/51.544094/0.677628" target="_blank" rel="noopener">Open map</a>
+      </div>
+    </div>
+
+    <div class="launch-note"><span class="dot"></span>Will launch once we reach 10 sign-ups.</div>
+
+    <div class="card">
+      <form id="joinForm">
+        <div class="field">
+          <label for="name">Name</label>
+          <input type="text" id="name" name="name" placeholder="Your name" autocomplete="name" required>
+        </div>
+        <div class="field">
+          <label for="contact">Email or phone number</label>
+          <input type="text" id="contact" name="contact" placeholder="How should we reach you?" required>
+          <p class="privacy-inline">Email or phone - you only need one. Used only to confirm your spot for this club, nothing else.</p>
+        </div>
+        <div class="field last">
+          <label for="slot">Sunday morning - does this time work?</label>
+          <select id="slot" name="slot" required>
+            <option value="" disabled selected>Choose an answer</option>
+            <option value="Yes, Sunday 10am works">Yes, Sunday 10am works</option>
+            <option value="I'm interested but need a different time">I'm interested but need a different time</option>
+            <option value="Not sure yet - just interested">Not sure yet - just interested</option>
+          </select>
+        </div>
+        <button type="submit" id="submitBtn">Join the club</button>
+        <div class="err hidden" id="errMsg">Something went wrong - please try again.</div>
+
+        <div class="fine">
+          <p>We'll email everyone here only if we reach 10 sign-ups by August 1, 2026 - otherwise this listing quietly expires.</p>
+        </div>
+      </form>
+
+      <div class="success hidden" id="successBox">
+        <h3 id="successHeading">You're on the list</h3>
+        <p>We'll email you if this hits 10 riders.</p>
+        <p class="sub">Otherwise it quietly expires August 1, 2026 - no action needed from you.</p>
+      </div>
+    </div>
+  </div>
+
+<script>
+  var SHEET_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbygZBVpiWXjfa_7R-AQAgxyLqpBbZbgH33VkE5LfxJQJ9zInqxSPS2a_ftX14GeEbX3/exec';
+
+  var form = document.getElementById('joinForm');
+  var btn = document.getElementById('submitBtn');
+  var errMsg = document.getElementById('errMsg');
+
+  form.addEventListener('submit', async function (e) {
+    e.preventDefault();
+    errMsg.classList.add('hidden');
+
+    var name = document.getElementById('name').value.trim();
+    var contact = document.getElementById('contact').value.trim();
+    var slot = document.getElementById('slot').value;
+    if (!name || !contact || !slot) return;
+
+    btn.disabled = true;
+    btn.textContent = 'Joining…';
+
+    var entry = { name: name, contact: contact, slot: slot, submittedAt: new Date().toISOString() };
+
+    try {
+      await fetch(SHEET_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: { 'Content-Type': 'text/plain;charset=utf-8' },
+        body: JSON.stringify(entry)
+      });
+      // no-cors gives an opaque response, so we can't read status.
+      // The request reaches Apps Script; treat completion as success.
+      document.getElementById('successHeading').textContent = "You're on the list, " + (name.split(' ')[0] || 'there');
+      form.classList.add('hidden');
+      document.getElementById('successBox').classList.remove('hidden');
+    } catch (err) {
+      btn.disabled = false;
+      btn.textContent = 'Join the club';
+      errMsg.classList.remove('hidden');
+    }
+  });
+</script>
+</body>
+</html>
