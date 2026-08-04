@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Sunday morning social cycle - Chalkwell Park</title>
+<title>Thursday evening drinks - Southend-on-Sea</title>
 <!-- Google tag (gtag.js) -->
 <script async src="https://www.googletagmanager.com/gtag/js?id=G-L27Y03LBED"></script>
 <script>
@@ -75,16 +75,6 @@
   }
   .fine p { font-size: 13px; opacity: 0.65; margin: 0; line-height: 1.55; }
   .privacy-inline { font-size: 12px; opacity: 0.6; margin: 8px 0 0; line-height: 1.5; }
-  .host {
-    display: flex; align-items: center; gap: 16px;
-    background: #fff; border: 1px solid oklch(0.24 0.02 165 / 0.1);
-    border-radius: 16px; padding: 18px 20px; margin-bottom: 20px;
-  }
-  .host img {
-    width: 64px; height: 64px; border-radius: 999px; object-fit: cover; flex: none;
-  }
-  .host .who { font-weight: 700; color: var(--teal); font-size: 15px; margin-bottom: 3px; }
-  .host .blurb { font-size: 14px; opacity: 0.75; line-height: 1.5; }
   .map-block { margin-bottom: 20px; }
   .map-block iframe {
     width: 100%; height: 220px; border: 1px solid oklch(0.24 0.02 165 / 0.12);
@@ -95,6 +85,20 @@
     display: flex; justify-content: space-between; gap: 12px; flex-wrap: wrap;
   }
   .map-caption a { color: var(--teal-2); }
+  .radio-group { display: flex; flex-direction: column; gap: 10px; }
+  .radio-option {
+    display: flex; align-items: center; gap: 10px;
+    padding: 10px 12px; border: 1px solid oklch(0.24 0.02 165 / 0.16); border-radius: 9px;
+  }
+  .radio-option input[type="radio"] { width: auto; flex: none; }
+  .radio-option label {
+    margin-bottom: 0; font-weight: 500; font-size: 14px; color: var(--ink); text-transform: none; letter-spacing: normal;
+  }
+  .checkbox-row { display: flex; align-items: center; gap: 10px; }
+  .checkbox-row input[type="checkbox"] { width: auto; flex: none; }
+  .checkbox-row label {
+    margin-bottom: 0; font-weight: 500; font-size: 14px; color: var(--ink); text-transform: none; letter-spacing: normal;
+  }
   .success { text-align: center; padding: 24px 0; }
   .success h3 { font-family: Georgia, serif; color: var(--teal); margin: 0 0 10px; font-size: 22px; }
   .success p { opacity: 0.75; margin: 0 0 4px; font-size: 15px; }
@@ -105,30 +109,22 @@
 <body>
   <div class="wrap">
     <div class="kicker">New in Southend</div>
-    <h1>Sunday morning social cycle - Chalkwell Park</h1>
-    <p class="lede">A casual ride - not a racing club. To meet in Chalkwell Park, in front of the metal building. Free to join, no membership required.</p>
-
-    <div class="host">
-      <img src="run-by.jpg" alt="James, who runs the ride">
-      <div>
-        <div class="who">Run by James</div>
-        <div class="blurb">I cycle quite a lot around Southend so that's why I wanted to make something like this. The idea is to do a bit more exercise on the weekend (as opposed to tons of coding).</div>
-      </div>
-    </div>
+    <h1>Thursday evening drinks - Southend-on-Sea</h1>
+    <p class="lede">Southend's got clubs for walking, over-35s, and more - but nothing casual for a Thursday evening drink if you're in your 20s or 30s and just fancy meeting a few new people. Same pub, same time, every week or two. No pressure to come every time.</p>
 
     <div class="map-block">
       <iframe
-        title="Meeting point - Chalkwell Park"
+        title="Meeting point (for now) - The Last Post"
         loading="lazy"
-        src="https://www.openstreetmap.org/export/embed.html?bbox=0.6716%2C51.5411%2C0.6836%2C51.5471&layer=mapnik&marker=51.544094%2C0.677628">
+        src="https://www.openstreetmap.org/export/embed.html?bbox=0.706545%2C51.533509%2C0.718545%2C51.539509&layer=mapnik&marker=51.536509%2C0.712545">
       </iframe>
       <div class="map-caption">
-        <span>Meeting point: Chalkwell Park, in front of the metal building</span>
-        <a href="https://www.openstreetmap.org/?mlat=51.544094&amp;mlon=0.677628#map=17/51.544094/0.677628" target="_blank" rel="noopener">Open map</a>
+        <span>Meeting point for now: The Last Post, Weston Road - final pub depends on the vote below</span>
+        <a href="https://www.openstreetmap.org/?mlat=51.536509&amp;mlon=0.712545#map=17/51.536509/0.712545" target="_blank" rel="noopener">Open map</a>
       </div>
     </div>
 
-    <div class="launch-note"><span class="dot"></span>Will launch once we reach 10 sign-ups.</div>
+    <div class="launch-note"><span class="dot"></span>Won't launch until 20 people are interested within 3 weeks.</div>
 
     <div class="card">
       <form id="joinForm">
@@ -139,29 +135,49 @@
         <div class="field">
           <label for="contact">Email or phone number</label>
           <input type="text" id="contact" name="contact" placeholder="How should we reach you?" required>
-          <p class="privacy-inline">Email or phone - you only need one. Used only to confirm your spot for this club, nothing else.</p>
+          <p class="privacy-inline">Email or phone - you only need one. Used only to let you know if this reaches 20 people, nothing else.</p>
+        </div>
+        <div class="field">
+          <div class="checkbox-row">
+            <input type="checkbox" id="canThursday" name="canThursday">
+            <label for="canThursday">I can usually make a Thursday at 7pm</label>
+          </div>
+        </div>
+        <div class="field">
+          <label>Vote on the pub</label>
+          <div class="radio-group">
+            <div class="radio-option">
+              <input type="radio" id="locWetherspoons" name="locationVote" value="Wetherspoons (The Elms, Leigh-on-Sea)" required>
+              <label for="locWetherspoons">Wetherspoons (The Elms, Leigh-on-Sea)</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" id="locLastPost" name="locationVote" value="The Last Post (Weston Road)" required>
+              <label for="locLastPost">The Last Post (Weston Road)</label>
+            </div>
+            <div class="radio-option">
+              <input type="radio" id="locPapillon" name="locationVote" value="Papillon (Marine Parade)" required>
+              <label for="locPapillon">Papillon (Marine Parade)</label>
+            </div>
+          </div>
         </div>
         <div class="field last">
-          <label for="slot">Sunday morning - does this time work?</label>
-          <select id="slot" name="slot" required>
-            <option value="" disabled selected>Choose an answer</option>
-            <option value="Yes, Sunday 10am works">Yes, Sunday 10am works</option>
-            <option value="I'm interested but need a different time">I'm interested but need a different time</option>
-            <option value="Not sure yet - just interested">Not sure yet - just interested</option>
-          </select>
+          <div class="checkbox-row">
+            <input type="checkbox" id="wantsToOrganise" name="wantsToOrganise">
+            <label for="wantsToOrganise">I don't mind helping to organise</label>
+          </div>
         </div>
-        <button type="submit" id="submitBtn">Join the club</button>
+        <button type="submit" id="submitBtn">Count me in</button>
         <div class="err hidden" id="errMsg">Something went wrong - please try again.</div>
 
         <div class="fine">
-          <p>We'll email everyone here only if we reach 10 sign-ups by August 1, 2026 - otherwise this listing quietly expires.</p>
+          <p>We'll only get in touch if we reach 20 people interested by August 25, 2026 - otherwise this listing quietly expires.</p>
         </div>
       </form>
 
       <div class="success hidden" id="successBox">
         <h3 id="successHeading">You're on the list</h3>
-        <p>We'll email you if this hits 10 riders.</p>
-        <p class="sub">Otherwise it quietly expires August 1, 2026 - no action needed from you.</p>
+        <p>We'll be in touch if this hits 20 people interested.</p>
+        <p class="sub">Otherwise it quietly expires August 25, 2026 - no action needed from you.</p>
       </div>
     </div>
   </div>
@@ -179,13 +195,23 @@
 
     var name = document.getElementById('name').value.trim();
     var contact = document.getElementById('contact').value.trim();
-    var slot = document.getElementById('slot').value;
-    if (!name || !contact || !slot) return;
+    var canThursday = document.getElementById('canThursday').checked;
+    var locationVoteEl = document.querySelector('input[name="locationVote"]:checked');
+    var locationVote = locationVoteEl ? locationVoteEl.value : '';
+    var wantsToOrganise = document.getElementById('wantsToOrganise').checked;
+    if (!name || !contact || !locationVote) return;
 
     btn.disabled = true;
     btn.textContent = 'Joining…';
 
-    var entry = { name: name, contact: contact, slot: slot, submittedAt: new Date().toISOString() };
+    var entry = {
+      name: name,
+      contact: contact,
+      canThursday: canThursday,
+      locationVote: locationVote,
+      wantsToOrganise: wantsToOrganise,
+      submittedAt: new Date().toISOString()
+    };
 
     try {
       await fetch(SHEET_SCRIPT_URL, {
@@ -201,7 +227,7 @@
       document.getElementById('successBox').classList.remove('hidden');
     } catch (err) {
       btn.disabled = false;
-      btn.textContent = 'Join the club';
+      btn.textContent = 'Count me in';
       errMsg.classList.remove('hidden');
     }
   });
