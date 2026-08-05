@@ -87,18 +87,47 @@
   .map-caption a { color: var(--teal-2); }
   .radio-group { display: flex; flex-direction: column; gap: 10px; }
   .radio-option {
-    display: flex; align-items: center; gap: 10px;
+    display: flex; align-items: center; gap: 12px;
+    padding: 14px 16px; border: 1px solid oklch(0.24 0.02 165 / 0.16); border-radius: 9px;
+    cursor: pointer; -webkit-tap-highlight-color: transparent;
+    transition: border-color 0.12s, background-color 0.12s;
+  }
+  .radio-option:hover { border-color: oklch(0.24 0.02 165 / 0.32); }
+  .radio-option:has(input:checked) {
+    border-color: var(--teal-2); background: oklch(0.42 0.07 175 / 0.06);
+  }
+  .radio-option input[type="radio"] {
+    width: 22px; height: 22px; flex: none; accent-color: var(--teal-2); cursor: pointer;
+  }
+  .radio-option span {
+    margin-bottom: 0; font-weight: 500; font-size: 14px; color: var(--ink);
+    text-transform: none; letter-spacing: normal;
+  }
+  .checkbox-row {
+    display: flex; align-items: center; gap: 12px; margin-bottom: 8px;
     padding: 10px 12px; border: 1px solid oklch(0.24 0.02 165 / 0.16); border-radius: 9px;
+    cursor: pointer; -webkit-tap-highlight-color: transparent;
+    transition: border-color 0.12s, background-color 0.12s;
   }
-  .radio-option input[type="radio"] { width: auto; flex: none; }
-  .radio-option label {
-    margin-bottom: 0; font-weight: 500; font-size: 14px; color: var(--ink); text-transform: none; letter-spacing: normal;
+  .checkbox-row:hover { border-color: oklch(0.24 0.02 165 / 0.32); }
+  .checkbox-row:has(input:checked) {
+    border-color: var(--teal-2); background: oklch(0.42 0.07 175 / 0.06);
   }
-  .checkbox-row { display: flex; align-items: center; gap: 10px; }
-  .checkbox-row input[type="checkbox"] { width: auto; flex: none; }
-  .checkbox-row label {
-    margin-bottom: 0; font-weight: 500; font-size: 14px; color: var(--ink); text-transform: none; letter-spacing: normal;
+  .checkbox-row input[type="checkbox"] {
+    width: 22px; height: 22px; flex: none; accent-color: var(--teal-2); cursor: pointer;
   }
+  .checkbox-row span {
+    margin-bottom: 0; font-weight: 500; font-size: 14px; color: var(--ink);
+    text-transform: none; letter-spacing: normal;
+  }
+  textarea {
+    width: 100%; padding: 12px 13px; font-size: 15px;
+    border: 1px solid oklch(0.24 0.02 165 / 0.16); border-radius: 9px;
+    background: var(--bg); color: var(--ink); font-family: inherit; resize: vertical; min-height: 60px;
+  }
+  textarea:focus { border-color: var(--teal-2); outline: none; }
+  .submit-row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .submit-row button { flex: 1; min-width: 150px; }
   .success { text-align: center; padding: 24px 0; }
   .success h3 { font-family: Georgia, serif; color: var(--teal); margin: 0 0 10px; font-size: 22px; }
   .success p { opacity: 0.75; margin: 0 0 4px; font-size: 15px; }
@@ -110,7 +139,7 @@
   <div class="wrap">
     <div class="kicker">New in Southend</div>
     <h1>Thursday evening drinks - Southend-on-Sea</h1>
-    <p class="lede">Southend's got clubs for walking, over-35s, and more - but nothing casual for a Thursday evening drink if you're in your 20s or 30s and just fancy meeting a few new people. Same pub, same time, every week or two. No pressure to come every time.</p>
+    <p class="lede">Southend's got clubs for walking, over-35s, and more - but nothing casual for a Thursday evening drink if you're in your 20s or 30s and just fancy meeting a few new people. Same pub, Thursdays at 7pm, every week or two. No pressure to come every time.</p>
 
     <div class="map-block">
       <iframe
@@ -124,7 +153,7 @@
       </div>
     </div>
 
-    <div class="launch-note"><span class="dot"></span>6/20 interested so far - won't launch until we reach 20 within 3 weeks.</div>
+    <div class="launch-note"><span class="dot"></span>10/20 interested so far - won't launch until it hits 20 people within 3 weeks.</div>
 
     <div class="card">
       <form id="joinForm">
@@ -134,49 +163,44 @@
         </div>
         <div class="field">
           <label for="contact">Email or phone number</label>
-          <input type="text" id="contact" name="contact" placeholder="How should we reach you?" required>
-          <p class="privacy-inline">Email or phone - you only need one. Used only to let you know if this reaches 20 people, nothing else.</p>
-        </div>
-        <div class="field">
-          <div class="checkbox-row">
-            <input type="checkbox" id="canThursday" name="canThursday">
-            <label for="canThursday">I can usually make a Thursday at 7pm</label>
-          </div>
+          <input type="text" id="contact" name="contact" placeholder="How should I reach you?" required>
         </div>
         <div class="field">
           <label>Vote on the pub</label>
           <div class="radio-group">
-            <div class="radio-option">
-              <input type="radio" id="locWetherspoons" name="locationVote" value="Wetherspoons (The Elms, Leigh-on-Sea)" required>
-              <label for="locWetherspoons">Wetherspoons (The Elms, Leigh-on-Sea)</label>
-            </div>
-            <div class="radio-option">
-              <input type="radio" id="locLastPost" name="locationVote" value="The Last Post (Weston Road)" required>
-              <label for="locLastPost">The Last Post (Weston Road)</label>
-            </div>
-            <div class="radio-option">
-              <input type="radio" id="locPapillon" name="locationVote" value="Papillon (Marine Parade)" required>
-              <label for="locPapillon">Papillon (Marine Parade)</label>
-            </div>
+            <label class="radio-option" for="locWetherspoons">
+              <input type="radio" id="locWetherspoons" name="locationVote" value="The Elms, Thursday, 7pm" required>
+              <span>The Elms, Thursday, 7pm</span>
+            </label>
+            <label class="radio-option" for="locLastPost">
+              <input type="radio" id="locLastPost" name="locationVote" value="The Last Post, Thursday, 7pm" required>
+              <span>The Last Post, Thursday, 7pm</span>
+            </label>
+            <label class="radio-option" for="locAltTime">
+              <input type="radio" id="locAltTime" name="locationVote" value="None of these work - Mon/Wed/Sat evening instead" required>
+              <span>None of these work for me - I'd prefer a different time, either Monday, Wednesday, or Saturday evening instead</span>
+            </label>
           </div>
         </div>
         <div class="field last">
-          <div class="checkbox-row">
-            <input type="checkbox" id="wantsToOrganise" name="wantsToOrganise">
-            <label for="wantsToOrganise">I don't mind helping to organise</label>
-          </div>
+          <label for="feedback">Optional: Extra factors to take into account.</label>
+          <textarea id="feedback" name="feedback" rows="2" placeholder="Anything that would make the difference between worth going and not worth going..."></textarea>
         </div>
-        <button type="submit" id="submitBtn">Count me in</button>
+        <div class="submit-row">
+          <button type="button" id="submitBtn">Count me in</button>
+          <button type="button" id="organiseBtn" class="btn-organise">Happy to help organise</button>
+        </div>
         <div class="err hidden" id="errMsg">Something went wrong - please try again.</div>
 
         <div class="fine">
           <p>We'll only get in touch if we reach 20 people interested by August 25, 2026 - otherwise this listing quietly expires.</p>
+          <p>If enough people pick Monday, Wednesday, or Saturday, I might start a second group around whichever evening comes out most popular.</p>
         </div>
       </form>
 
       <div class="success hidden" id="successBox">
         <h3 id="successHeading">You're on the list</h3>
-        <p>We'll be in touch if this hits 20 people interested.</p>
+        <p id="successSub">We'll be in touch if this hits 20 people interested.</p>
         <p class="sub">Otherwise it quietly expires August 25, 2026 - no action needed from you.</p>
       </div>
     </div>
@@ -187,29 +211,32 @@
 
   var form = document.getElementById('joinForm');
   var btn = document.getElementById('submitBtn');
+  var organiseBtn = document.getElementById('organiseBtn');
   var errMsg = document.getElementById('errMsg');
 
-  form.addEventListener('submit', async function (e) {
-    e.preventDefault();
+  async function submitEntry(wantsToOrganise) {
     errMsg.classList.add('hidden');
 
     var name = document.getElementById('name').value.trim();
     var contact = document.getElementById('contact').value.trim();
-    var canThursday = document.getElementById('canThursday').checked;
     var locationVoteEl = document.querySelector('input[name="locationVote"]:checked');
     var locationVote = locationVoteEl ? locationVoteEl.value : '';
-    var wantsToOrganise = document.getElementById('wantsToOrganise').checked;
     if (!name || !contact || !locationVote) return;
 
+    var feedback = document.getElementById('feedback').value.trim();
+
     btn.disabled = true;
-    btn.textContent = 'Joining…';
+    organiseBtn.disabled = true;
+    var clickedBtn = wantsToOrganise ? organiseBtn : btn;
+    var clickedLabel = clickedBtn.textContent;
+    clickedBtn.textContent = 'Joining…';
 
     var entry = {
       name: name,
       contact: contact,
-      canThursday: canThursday,
       locationVote: locationVote,
       wantsToOrganise: wantsToOrganise,
+      feedback: feedback,
       submittedAt: new Date().toISOString()
     };
 
@@ -222,15 +249,23 @@
       });
       // no-cors gives an opaque response, so we can't read status.
       // The request reaches Apps Script; treat completion as success.
-      document.getElementById('successHeading').textContent = "You're on the list, " + (name.split(' ')[0] || 'there');
+      var heading = "You're on the list, " + (name.split(' ')[0] || 'there');
+      document.getElementById('successHeading').textContent = heading;
+      document.getElementById('successSub').textContent = wantsToOrganise
+        ? "Thanks for offering to help organise - I'll be in touch."
+        : "We'll be in touch if this hits 20 people interested.";
       form.classList.add('hidden');
       document.getElementById('successBox').classList.remove('hidden');
     } catch (err) {
       btn.disabled = false;
-      btn.textContent = 'Count me in';
+      organiseBtn.disabled = false;
+      clickedBtn.textContent = clickedLabel;
       errMsg.classList.remove('hidden');
     }
-  });
+  }
+
+  btn.addEventListener('click', function () { submitEntry(false); });
+  organiseBtn.addEventListener('click', function () { submitEntry(true); });
 </script>
 </body>
 </html>
