@@ -181,14 +181,14 @@
         <div class="err hidden" id="errMsg">Something went wrong - please try again.</div>
 
         <div class="fine">
-          <p>We'll only get in touch if we reach 20 people interested by August 25, 2026 - otherwise this listing quietly expires.</p>
+          <p>I'll get in touch if we reach 20 people interested by August 25, 2026 - otherwise this listing quietly expires.</p>
           <p>If enough people pick Monday, Wednesday, or Saturday, I might start a second group around whichever evening comes out most popular.</p>
         </div>
       </form>
 
       <div class="success hidden" id="successBox">
         <h3 id="successHeading">You're on the list</h3>
-        <p id="successSub">We'll be in touch if this hits 20 people interested.</p>
+        <p id="successSub">I'll be in touch if this hits 20 people interested.</p>
         <p class="sub">Otherwise it quietly expires August 25, 2026 - no action needed from you.</p>
       </div>
     </div>
@@ -253,7 +253,7 @@
       document.getElementById('successHeading').textContent = heading;
       document.getElementById('successSub').textContent = wantsToOrganise
         ? "Thanks for offering to help organise - I'll be in touch."
-        : "We'll be in touch if this hits 20 people interested.";
+        : "I'll be in touch if this hits 20 people interested.";
       form.classList.add('hidden');
       document.getElementById('successBox').classList.remove('hidden');
     } catch (err) {
